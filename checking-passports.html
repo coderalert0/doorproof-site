@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Check a Passport at the Door (Reading the MRZ)</title>
+<meta name="description" content="How to check a passport for age at a bar or store: the photo page, the two machine-readable lines defined by ICAO Doc 9303, and the check digits that catch typed-over dates.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://coderalert0.github.io/doorproof-site/checking-passports.html">
+<link rel="alternate" type="text/markdown" href="checking-passports.md">
+<meta name="theme-color" content="#090c12">
+<meta name="apple-itunes-app" content="app-id=6832112189">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Doorproof">
+<meta property="og:title" content="How to Check a Passport at the Door (Reading the MRZ)">
+<meta property="og:description" content="How to check a passport for age at a bar or store: the photo page, the two machine-readable lines defined by ICAO Doc 9303, and the check digits that catch typed-over dates.">
+<meta property="og:url" content="https://coderalert0.github.io/doorproof-site/checking-passports.html">
+<meta property="og:image" content="https://coderalert0.github.io/doorproof-site/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Doorproof, the ID scanner for the door, showing a green OK result">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+<link rel="alternate" type="text/plain" title="llms.txt" href="llms.txt">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to check a passport at the door", "description": "How to check a passport for age at a bar or store: the photo page, the two machine-readable lines defined by ICAO Doc 9303, and the check digits that catch typed-over dates.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "mainEntityOfPage": "https://coderalert0.github.io/doorproof-site/checking-passports.html", "image": "https://coderalert0.github.io/doorproof-site/img/og.png", "author": {"@type": "Organization", "name": "Doorproof", "url": "https://coderalert0.github.io/doorproof-site/", "logo": "https://coderalert0.github.io/doorproof-site/img/icon-512.png"}, "publisher": {"@type": "Organization", "name": "Doorproof", "url": "https://coderalert0.github.io/doorproof-site/", "logo": "https://coderalert0.github.io/doorproof-site/img/icon-512.png"}, "inLanguage": "en-US", "citation": ["https://www.icao.int/publications/doc-series/doc-9303", "https://www.abc.ca.gov/education/licensee-education/checking-identification", "https://www.abc.virginia.gov/licenses/retail-resources/preventing-underage-sales/detecting-fake-ids"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://coderalert0.github.io/doorproof-site/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://coderalert0.github.io/doorproof-site/#guides"}, {"@type": "ListItem", "position": 3, "name": "Checking passports", "item": "https://coderalert0.github.io/doorproof-site/checking-passports.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I scan a passport with a phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. An app can read the two machine-readable lines with the camera, check the check digits, and count the age from the birth date."}}, {"@type": "Question", "name": "Do passports show an under-21 date?", "acceptedAnswer": {"@type": "Answer", "text": "No. Unlike many US licenses, a passport has no \"under 21 until\" date, so count the age from the birth date."}}, {"@type": "Question", "name": "Are foreign passports acceptable for alcohol?", "acceptedAnswer": {"@type": "Answer", "text": "California accepts foreign passports with a photograph. Other states differ, so check with your state's alcohol regulator."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="./"><img src="icon.png" alt="" width="34" height="34"><span>Doorproof</span></a>
+    <nav class="nav" aria-label="Site">
+      <a href="./#how">How it works</a>
+      <a href="./#guides" aria-current="page">Guides</a>
+      <a href="./#support">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a class="nav-cta" href="https://apps.apple.com/us/app/id6832112189">Get the app</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> <span aria-hidden="true">/</span> <a href="./#guides">Guides</a> <span aria-hidden="true">/</span> <span>Checking passports</span></nav>
+<article>
+<h1>How to check a passport at the door</h1>
+<p class="updated">Checked against its sources on <time datetime="2026-11-07">November 7, 2026</time></p>
+<div class="answer"><h2>Short answer</h2><p>Check the photo page. Compare the photo, count the age from the birth date and make sure it hasn&#x27;t expired. The two lines of letters and chevrons at the bottom are the machine-readable zone set by ICAO Doc 9303. They repeat the passport number, birth date and expiry, each followed by a check digit, so a date changed by hand usually breaks the math.</p></div>
+<nav class="toc" aria-label="On this page"><p class="foot-title">On this page</p><ul><li><a href="#is-a-passport-acceptable-id">Is a passport acceptable ID?</a></li><li><a href="#the-photo-page">The photo page</a></li><li><a href="#the-machine-readable-zone">The machine-readable zone</a></li><li><a href="#check-digits-catch-edits">Check digits catch edits</a></li><li><a href="#two-digit-years">Two-digit years</a></li><li><a href="#frequently-asked-questions">Frequently asked questions</a></li></ul></nav>
+<h2 id="is-a-passport-acceptable-id">Is a passport acceptable ID?</h2>
+<p>Usually, but it depends on the state. California accepts US and foreign passports with a photograph, even though they carry no physical description. Virginia's list includes US passports. Check your state's rules and your venue's policy.</p>
+<h2 id="the-photo-page">The photo page</h2>
+<p>A passport carries the details on its data page: photo, name, nationality, date of birth, sex, issue and expiry dates, and the passport number. Check it the way you would a license. Do the math on the birth date, check the expiry and compare the face, focusing on the nose, chin, ears and eyes.</p>
+<h2 id="the-machine-readable-zone">The machine-readable zone</h2>
+<p>At the bottom of the data page are two lines of 44 characters each, using capital letters, digits and the <code>&lt;</code> filler. ICAO Doc 9303, the international standard for travel documents, defines them.</p>
+<ul>
+<li><strong>Line 1:</strong> <code>P</code>, the issuing country's three-letter code, then the surname and given names separated by <code>&lt;&lt;</code>.</li>
+<li><strong>Line 2:</strong> the passport number and its check digit, the nationality, the birth date as YYMMDD and its check digit, the sex, the expiry date as YYMMDD and its check digit, an optional personal number and its check digit, and a final check digit over the number, the two dates and the personal number.</li>
+</ul>
+<p>Many national ID cards use a three-line version of 30 characters each, with the same idea.</p>
+<h2 id="check-digits-catch-edits">Check digits catch edits</h2>
+<p>Each check digit comes from the field just before it. Every character gets a value: digits count as themselves, letters A to Z count as 10 to 35, and <code>&lt;</code> counts as 0. The values are multiplied by 7, 3 and 1 in turn, added up, and the last digit of the sum is the check digit. Change one digit of a birth date and the check digit no longer matches. The final check digit covers the passport number, birth date, expiry and personal number together, each with its own check digit.</p>
+<p>A matching check digit doesn't prove the passport is real. A forger can compute check digits too. It does mean the lines were encoded consistently, and a mismatch means something was changed.</p>
+<h2 id="two-digit-years">Two-digit years</h2>
+<p>The machine-readable zone writes years with two digits. A reader has to work out the century: a birth year of 05 is 2005, not 1905, for anyone standing at your door. The printed date on the page settles it.</p>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="can-i-scan-a-passport-with-a-phone">Can I scan a passport with a phone?</h3>
+<p>Yes. An app can read the two machine-readable lines with the camera, check the check digits, and count the age from the birth date.</p>
+<h3 id="do-passports-show-an-under-21-date">Do passports show an under-21 date?</h3>
+<p>No. Unlike many US licenses, a passport has no "under 21 until" date, so count the age from the birth date.</p>
+<h3 id="are-foreign-passports-acceptable-for-alcohol">Are foreign passports acceptable for alcohol?</h3>
+<p>California accepts foreign passports with a photograph. Other states differ, so check with your state's alcohol regulator.</p>
+<aside class="app-cta">
+  <div><h2>Check IDs in a second</h2><p>Doorproof reads the barcode, counts the age and flags what doesn't add up. Free, unlimited scanning on iPhone and iPad.</p></div>
+  <a class="badge" href="https://apps.apple.com/us/app/id6832112189"><img src="img/app-store-badge.svg" alt="Download on the App Store" width="150" height="50"></a>
+</aside>
+<section class="sources"><h2>Sources</h2><ul><li><a href="https://www.icao.int/publications/doc-series/doc-9303" rel="noopener">ICAO Doc 9303: Machine Readable Travel Documents</a></li><li><a href="https://www.abc.ca.gov/education/licensee-education/checking-identification" rel="noopener">California ABC: Checking Identification</a></li><li><a href="https://www.abc.virginia.gov/licenses/retail-resources/preventing-underage-sales/detecting-fake-ids" rel="noopener">Virginia ABC: Detecting Fake IDs</a></li></ul><p class="muted">Guides summarize public sources and aren't legal advice. Rules differ by state: check with your state's alcohol regulator.</p></section>
+<section class="related"><h2>Related guides</h2><ul><li><a href="how-to-check-an-id.html">How to check an ID at the door</a></li><li><a href="drivers-license-barcode.html">What&#x27;s in the barcode on a driver&#x27;s license</a></li><li><a href="do-id-scanners-detect-fake-ids.html">Do ID scanners detect fake IDs?</a></li></ul></section>
+</article>
+</div>
+</main>
+<footer>
+  <div class="in">
+    <div class="foot-about">
+      <a class="brand" href="./"><img src="icon.png" alt="" width="28" height="28"><span>Doorproof</span></a>
+      <p>The ID scanner for the door, on iPhone and iPad.</p>
+      <p>© 2026 Doorproof. Doorproof helps staff check IDs. It isn't legal advice or a guarantee, and rules on checking and scanning IDs differ by state.</p>
+    </div>
+    <nav aria-label="Guides"><p class="foot-title">Guides</p><a href="do-id-scanners-detect-fake-ids.html">Do scanners catch fakes?</a><a href="how-to-check-an-id.html">Check an ID by hand</a><a href="drivers-license-barcode.html">The license barcode</a><a href="passed-back-id.html">Passed-back IDs</a><a href="checking-passports.html">Checking passports</a></nav>
+    <nav aria-label="App"><p class="foot-title">App</p><a href="https://apps.apple.com/us/app/id6832112189">App Store</a><a href="./#support">Support</a><a href="privacy.html">Privacy Policy</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a><a href="llms.txt">llms.txt</a></nav>
+  </div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>

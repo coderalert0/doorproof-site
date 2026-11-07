@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What&#x27;s in the Barcode on a Driver&#x27;s License (AAMVA PDF417 Fields)</title>
+<meta name="description" content="The barcode on the back of a US or Canadian license is an AAMVA PDF417 symbol. The fields it holds, from DBB date of birth to DDJ under-21 date, and what they tell door staff.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://coderalert0.github.io/doorproof-site/drivers-license-barcode.html">
+<link rel="alternate" type="text/markdown" href="drivers-license-barcode.md">
+<meta name="theme-color" content="#090c12">
+<meta name="apple-itunes-app" content="app-id=6832112189">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Doorproof">
+<meta property="og:title" content="What&#x27;s in the Barcode on a Driver&#x27;s License (AAMVA PDF417 Fields)">
+<meta property="og:description" content="The barcode on the back of a US or Canadian license is an AAMVA PDF417 symbol. The fields it holds, from DBB date of birth to DDJ under-21 date, and what they tell door staff.">
+<meta property="og:url" content="https://coderalert0.github.io/doorproof-site/drivers-license-barcode.html">
+<meta property="og:image" content="https://coderalert0.github.io/doorproof-site/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Doorproof, the ID scanner for the door, showing a green OK result">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+<link rel="alternate" type="text/plain" title="llms.txt" href="llms.txt">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What's in the barcode on a driver's license", "description": "The barcode on the back of a US or Canadian license is an AAMVA PDF417 symbol. The fields it holds, from DBB date of birth to DDJ under-21 date, and what they tell door staff.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "mainEntityOfPage": "https://coderalert0.github.io/doorproof-site/drivers-license-barcode.html", "image": "https://coderalert0.github.io/doorproof-site/img/og.png", "author": {"@type": "Organization", "name": "Doorproof", "url": "https://coderalert0.github.io/doorproof-site/", "logo": "https://coderalert0.github.io/doorproof-site/img/icon-512.png"}, "publisher": {"@type": "Organization", "name": "Doorproof", "url": "https://coderalert0.github.io/doorproof-site/", "logo": "https://coderalert0.github.io/doorproof-site/img/icon-512.png"}, "inLanguage": "en-US", "citation": ["https://www.aamva.org/getmedia/81af105d-8b1b-45e1-aa46-f1800a259ed1/AAMVADLIDCardDesignStandard2025.pdf", "https://www.aamva.org/identity/issuer-identification-numbers-(iin", "https://www.abc.ca.gov/education/licensee-education/checking-identification", "https://www.abc.virginia.gov/licenses/retail-resources/preventing-underage-sales/detecting-fake-ids"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://coderalert0.github.io/doorproof-site/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://coderalert0.github.io/doorproof-site/#guides"}, {"@type": "ListItem", "position": 3, "name": "The license barcode", "item": "https://coderalert0.github.io/doorproof-site/drivers-license-barcode.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What type of barcode is on a driver's license?", "acceptedAnswer": {"@type": "Answer", "text": "A PDF417 barcode, a stacked two-dimensional barcode. AAMVA's card design standard defines what goes in it for US and Canadian licenses and ID cards."}}, {"@type": "Question", "name": "What does DDJ mean on a license barcode?", "acceptedAnswer": {"@type": "Answer", "text": "DDJ is the \"Under 21 Until\" field: the date the cardholder turns 21. It's written in the same date order as the card's other dates."}}, {"@type": "Question", "name": "Can a phone read a driver's license barcode?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Any phone camera can decode PDF417. An app then has to parse the AAMVA fields and check the dates and issuer."}}, {"@type": "Question", "name": "Does the barcode contain the photo?", "acceptedAnswer": {"@type": "Answer", "text": "No. The standard's barcode holds text fields, not the cardholder's photo, so staff still compare the face to the photo on the card."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="./"><img src="icon.png" alt="" width="34" height="34"><span>Doorproof</span></a>
+    <nav class="nav" aria-label="Site">
+      <a href="./#how">How it works</a>
+      <a href="./#guides" aria-current="page">Guides</a>
+      <a href="./#support">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a class="nav-cta" href="https://apps.apple.com/us/app/id6832112189">Get the app</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> <span aria-hidden="true">/</span> <a href="./#guides">Guides</a> <span aria-hidden="true">/</span> <span>The license barcode</span></nav>
+<article>
+<h1>What&#x27;s in the barcode on a driver&#x27;s license</h1>
+<p class="updated">Checked against its sources on <time datetime="2026-11-07">November 7, 2026</time></p>
+<div class="answer"><h2>Short answer</h2><p>The wide barcode on the back of a US or Canadian license is a PDF417 symbol laid out by AAMVA&#x27;s DL/ID Card Design Standard. It holds the details printed on the front, such as name, birth date, expiry, license number, address and physical description, plus the issuer&#x27;s six-digit Issuer Identification Number. Each field starts with a three-letter code, such as DBB for date of birth.</p></div>
+<nav class="toc" aria-label="On this page"><p class="foot-title">On this page</p><ul><li><a href="#the-standard-behind-it">The standard behind it</a></li><li><a href="#how-the-barcode-starts">How the barcode starts</a></li><li><a href="#the-fields-door-staff-care-about">The fields door staff care about</a></li><li><a href="#dates-are-written-two-ways">Dates are written two ways</a></li><li><a href="#under-21-cards">Under-21 cards</a></li><li><a href="#what-the-barcode-can-prove-and-what-it-cant">What the barcode can prove, and what it can&#x27;t</a></li><li><a href="#frequently-asked-questions">Frequently asked questions</a></li></ul></nav>
+<h2 id="the-standard-behind-it">The standard behind it</h2>
+<p>AAMVA, the association of US and Canadian motor vehicle agencies, publishes the DL/ID Card Design Standard. Its Annex D sets out the PDF417 barcode that states and provinces print on the back of driver's licenses and ID cards. The standard is why one scanner can read a card from any state.</p>
+<h2 id="how-the-barcode-starts">How the barcode starts</h2>
+<p>The data opens with a header. It contains the characters <code>ANSI</code>, then the issuer's six-digit Issuer Identification Number (IIN), then the version of the standard the card follows. AAMVA assigns the IINs: 636014 is California, for example, and 636015 is Texas. A barcode whose IIN doesn't belong to the state printed on the front wasn't made by that state.</p>
+<h2 id="the-fields-door-staff-care-about">The fields door staff care about</h2>
+<p>Each field is a three-letter element ID followed by its value.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Field</th>
+<th>What it tells you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DBB</td>
+<td>Date of birth</td>
+<td>Age, counted to the day</td>
+</tr>
+<tr>
+<td>DBA</td>
+<td>Expiration date</td>
+<td>Whether the card is still valid</td>
+</tr>
+<tr>
+<td>DBD</td>
+<td>Issue date</td>
+<td>When this card was printed</td>
+</tr>
+<tr>
+<td>DDJ</td>
+<td>Under 21 until</td>
+<td>The date the holder turns 21</td>
+</tr>
+<tr>
+<td>DDH</td>
+<td>Under 18 until</td>
+<td>The date the holder turns 18</td>
+</tr>
+<tr>
+<td>DDI</td>
+<td>Under 19 until</td>
+<td>The date the holder turns 19</td>
+</tr>
+<tr>
+<td>DCS</td>
+<td>Family name</td>
+<td>Last name</td>
+</tr>
+<tr>
+<td>DAC</td>
+<td>First name</td>
+<td>First name</td>
+</tr>
+<tr>
+<td>DAD</td>
+<td>Middle name</td>
+<td>Middle name or initial</td>
+</tr>
+<tr>
+<td>DAQ</td>
+<td>Customer ID number</td>
+<td>The license or ID number</td>
+</tr>
+<tr>
+<td>DAG, DAI, DAJ, DAK</td>
+<td>Street, city, state, postal code</td>
+<td>The address on the card</td>
+</tr>
+<tr>
+<td>DBC</td>
+<td>Sex</td>
+<td>1 male, 2 female, 9 not specified</td>
+</tr>
+<tr>
+<td>DAU</td>
+<td>Height</td>
+<td>Height, to compare with the person</td>
+</tr>
+<tr>
+<td>DAY</td>
+<td>Eye color</td>
+<td>Eye color, to compare with the person</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="dates-are-written-two-ways">Dates are written two ways</h2>
+<p>US cards write dates as month, day, year (MMDDCCYY). Canadian cards write them as year, month, day (CCYYMMDD). A reader that assumes one order misreads the other country's cards, so a good scanner checks which order makes sense for the issuer.</p>
+<h2 id="under-21-cards">Under-21 cards</h2>
+<p>The standard specifies a vertical card format for drivers under 21, optional in Canada. California and Virginia both print their under-21 cards vertically. A vertical card at a bar door deserves a careful look at the birth date and the under-21 date.</p>
+<h2 id="what-the-barcode-can-prove-and-what-it-cant">What the barcode can prove, and what it can't</h2>
+<p>The fields have to agree with each other. The under-21 date must fall exactly 21 years after the birth date. The issue date must come before the expiry date. The IIN must match the issuing state. When they don't agree, the barcode was edited or built by hand.</p>
+<p>When they do agree, the barcode only proves it was encoded correctly. Fake ID sellers encode correct barcodes too. See <a href="do-id-scanners-detect-fake-ids.html">do ID scanners detect fake IDs?</a></p>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="what-type-of-barcode-is-on-a-drivers-license">What type of barcode is on a driver's license?</h3>
+<p>A PDF417 barcode, a stacked two-dimensional barcode. AAMVA's card design standard defines what goes in it for US and Canadian licenses and ID cards.</p>
+<h3 id="what-does-ddj-mean-on-a-license-barcode">What does DDJ mean on a license barcode?</h3>
+<p>DDJ is the "Under 21 Until" field: the date the cardholder turns 21. It's written in the same date order as the card's other dates.</p>
+<h3 id="can-a-phone-read-a-drivers-license-barcode">Can a phone read a driver's license barcode?</h3>
+<p>Yes. Any phone camera can decode PDF417. An app then has to parse the AAMVA fields and check the dates and issuer.</p>
+<h3 id="does-the-barcode-contain-the-photo">Does the barcode contain the photo?</h3>
+<p>No. The standard's barcode holds text fields, not the cardholder's photo, so staff still compare the face to the photo on the card.</p>
+<aside class="app-cta">
+  <div><h2>Check IDs in a second</h2><p>Doorproof reads the barcode, counts the age and flags what doesn't add up. Free, unlimited scanning on iPhone and iPad.</p></div>
+  <a class="badge" href="https://apps.apple.com/us/app/id6832112189"><img src="img/app-store-badge.svg" alt="Download on the App Store" width="150" height="50"></a>
+</aside>
+<section class="sources"><h2>Sources</h2><ul><li><a href="https://www.aamva.org/getmedia/81af105d-8b1b-45e1-aa46-f1800a259ed1/AAMVADLIDCardDesignStandard2025.pdf" rel="noopener">AAMVA DL/ID Card Design Standard (2025)</a></li><li><a href="https://www.aamva.org/identity/issuer-identification-numbers-(iin" rel="noopener">AAMVA: Issuer Identification Numbers (IIN)</a></li><li><a href="https://www.abc.ca.gov/education/licensee-education/checking-identification" rel="noopener">California ABC: Checking Identification</a></li><li><a href="https://www.abc.virginia.gov/licenses/retail-resources/preventing-underage-sales/detecting-fake-ids" rel="noopener">Virginia ABC: Detecting Fake IDs</a></li></ul><p class="muted">Guides summarize public sources and aren't legal advice. Rules differ by state: check with your state's alcohol regulator.</p></section>
+<section class="related"><h2>Related guides</h2><ul><li><a href="do-id-scanners-detect-fake-ids.html">Do ID scanners detect fake IDs?</a></li><li><a href="how-to-check-an-id.html">How to check an ID at the door</a></li><li><a href="checking-passports.html">How to check a passport at the door</a></li></ul></section>
+</article>
+</div>
+</main>
+<footer>
+  <div class="in">
+    <div class="foot-about">
+      <a class="brand" href="./"><img src="icon.png" alt="" width="28" height="28"><span>Doorproof</span></a>
+      <p>The ID scanner for the door, on iPhone and iPad.</p>
+      <p>© 2026 Doorproof. Doorproof helps staff check IDs. It isn't legal advice or a guarantee, and rules on checking and scanning IDs differ by state.</p>
+    </div>
+    <nav aria-label="Guides"><p class="foot-title">Guides</p><a href="do-id-scanners-detect-fake-ids.html">Do scanners catch fakes?</a><a href="how-to-check-an-id.html">Check an ID by hand</a><a href="drivers-license-barcode.html">The license barcode</a><a href="passed-back-id.html">Passed-back IDs</a><a href="checking-passports.html">Checking passports</a></nav>
+    <nav aria-label="App"><p class="foot-title">App</p><a href="https://apps.apple.com/us/app/id6832112189">App Store</a><a href="./#support">Support</a><a href="privacy.html">Privacy Policy</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a><a href="llms.txt">llms.txt</a></nav>
+  </div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>

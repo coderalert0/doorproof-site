@@ -1,0 +1,435 @@
+# Doorproof
+
+> Doorproof is an ID scanner and age verification app for iPhone and iPad. Door staff at bars, clubs, liquor stores and events point the camera at the barcode on the back of a US or Canadian driver's license or ID card, a passport's machine-readable lines, or an Apple Wallet ID, and get the age, the expiry and any sign the card was altered, in a second.
+
+Doorproof helps staff check IDs. It isn't legal advice or a guarantee, and rules on checking and scanning IDs differ by state. Checked on November 7, 2026. Source: https://coderalert0.github.io/doorproof-site/
+
+## Key facts
+
+- Scanning is free and unlimited, with no account. Pass-back alerts and Fake Watch are free.
+- Doorproof Pro costs $9.99 a month or $49.99 a year in the US, each with a one-week free trial. It adds scan records, ban and VIP lists matched to the person, wristband colors by age and iPad door mode.
+- Reads driver's licenses and ID cards from every US state, DC, the US territories and Canada's provinces (the AAMVA PDF417 barcode), passports and passport-style ID cards (the ICAO Doc 9303 machine-readable zone, check digits verified), and Apple Wallet IDs through Apple's ID Verifier.
+- Checks: age and expiry in the venue's time zone; barcodes that disagree with themselves, such as an under-21 date that doesn't follow from the birth date; the same card scanned twice in one night (pass-back); cards made like fakes other venues confirmed (Fake Watch); a question only the real holder would know.
+- Limits: a phone can't check holograms, ultraviolet ink or card thickness, and a well-made fake carries a working barcode. Doorproof never calls a card genuine on its barcode alone. An unreadable barcode means check by hand, not fake.
+- Privacy: IDs are read on the device and no image is saved. Records are off by default and stay on the device. Fake Watch shares only what staff mark as fake or real: how that card's barcode was made, the issuing state, the venue's city, an anonymous venue code and the time, never a name, ID number, birth date, address or photo. It can be turned off.
+- Runs on iPhone and iPad with iOS 17 or later. On the App Store in the United States and Canada, in English and Spanish (Mexico).
+
+## Questions and answers
+
+### Is Doorproof free?
+
+Yes. Scanning is free and unlimited, with pass-back alerts and Fake Watch included, and no account. Doorproof Pro adds scan records, ban and VIP lists, wristbands and iPad door mode for $9.99 a month or $49.99 a year in the US, each with a free week.
+
+### Which IDs does it read?
+
+Driver's licenses and ID cards from every US state, DC, the US territories and Canada's provinces, from the barcode on the back. Passports and passport-style ID cards from the machine-readable lines. Apple Wallet IDs through Apple's ID Verifier.
+
+### Can Doorproof tell if an ID is fake?
+
+It catches what a barcode can show: expired and under-age cards, altered cards whose barcode no longer adds up, and cards made like fakes other venues confirmed. A well-made fake carries a working barcode, so Doorproof never calls a card genuine on the barcode alone and tells staff what to check by hand.
+
+### Which devices does it run on?
+
+iPhone and iPad with iOS 17 or later. It's on the App Store in the United States and Canada, in English and Spanish.
+
+### It won't read a card
+
+Hold the back of the card flat, filling the frame, about a hand's width from the camera. In a dark room, tap the flashlight. If a barcode is worn or damaged, Doorproof says "Check by hand": that doesn't mean the card is fake.
+
+### It said "Look closer"
+
+The card is old enough and in date, but something doesn't add up, and the result says what. Check the card by hand: tilt it to see the hologram shift, feel for raised print, compare the photo, and ask the question Doorproof suggests.
+
+### How do I mark a fake for Fake Watch?
+
+Tap "It's fake" on a Look closer result, but only after checking the card by hand. Doorproof shares how its barcode was made and your city, never anything about the person. If a match was wrong, tap "It's real". You can turn sharing off in Settings.
+
+### Can I practice without an ID?
+
+Settings > Help > Practice with sample IDs shows what each result looks like. Samples aren't counted, recorded or shared.
+
+### How do mobile IDs work?
+
+Tap Mobile ID and have the guest hold their iPhone near yours. Apple's own screen shows you their name, photo and whether they're over 21, and you approve or turn them away there. It needs a US-region iPhone XS or later.
+
+### What does Doorproof keep?
+
+With records off (the default), only tonight's counts. With records on (Pro), a log on your device for as many days as you choose, with names and birth dates only if you turn that on. See the privacy policy.
+
+### How do I cancel Doorproof Pro?
+
+In Settings on your iPhone or iPad: your name > Subscriptions > Doorproof Pro. Restore purchases is in the app's Settings.
+
+---
+
+# Do ID scanners detect fake IDs?
+
+> Some fakes, not all. A scanner reads the barcode on the back of the card, so it catches expired and under-age cards, barcodes that don't follow the standard, and altered cards whose barcode no longer matches the front. A well-made fake carries a correctly encoded barcode and scans clean, so the card still needs a check by hand.
+
+Source page: https://coderalert0.github.io/doorproof-site/do-id-scanners-detect-fake-ids.html
+Checked against its sources on November 7, 2026. Published by Doorproof, an ID scanner app for iPhone and iPad. Not legal advice.
+
+## What a scanner actually reads
+
+Every US and Canadian driver's license and state ID card carries a PDF417 barcode on the back, laid out by the AAMVA DL/ID Card Design Standard. It holds the same details printed on the front: name, date of birth, expiry date, license number, address and physical description, plus a six-digit number that identifies the state or province that issued it.
+
+A scanner decodes that barcode and does the math. It doesn't see the card's holograms, ultraviolet ink, laser engraving or thickness. A phone camera can't check those. Some dedicated hardware scanners add ultraviolet and image checks.
+
+## What a scan catches
+
+- **Under-age and expired cards.** The scanner reads the birth date and expiry date and counts them in your time zone, so nobody has to do the math at a busy door.
+- **Barcodes that break the standard.** A barcode with a missing header, an unknown issuer number, impossible dates or garbled fields is a sign the card wasn't made by a state.
+- **Barcodes that disagree with themselves.** The standard puts the date someone turns 21 in its own field. If that date doesn't follow from the birth date, or the card's issue date comes after its expiry, the barcode was edited or built by hand.
+- **Fronts that don't match the barcode.** An altered card often has a new birth date printed on the front while the barcode still holds the old one. Comparing the two catches it.
+- **Cards seen before.** A record of tonight's scans catches a real card handed back out the door to a friend: a [passed-back ID](https://coderalert0.github.io/doorproof-site/passed-back-id.md).
+
+## What a scan can't catch
+
+- **A good counterfeit.** Fake ID sellers encode barcodes that follow the standard. If every field is plausible and consistent, the card scans clean.
+- **A borrowed ID.** A real, unexpired card belonging to an older sibling or friend scans perfectly. Only the photo, the person's answers and their behavior give it away.
+- **Physical tampering the barcode doesn't show.** A replaced photo or a re-laminated card can leave the barcode untouched.
+
+That's why California's and Virginia's alcohol regulators both teach a hand check, Feel, Look, Ask, Give back, on top of any scan. See [how to check an ID at the door](https://coderalert0.github.io/doorproof-site/how-to-check-an-id.md).
+
+## Signed IDs are different
+
+Mobile driver's licenses and IDs in a phone's wallet are signed by the issuing state. AAMVA's mobile ID guidelines describe how a reader checks that signature, so a forged or edited mobile ID fails the check. On iPhone, businesses read Apple Wallet IDs through Apple's ID Verifier.
+
+Plastic cards are moving the same way. In 2026 AAMVA asked its members for feedback on a standard way to add a cryptographic signature to the PDF417 barcode. Until states issue cards with signed barcodes, a plastic card's barcode can be copied or invented.
+
+## How to use a scan result
+
+1. **A clean scan means the barcode adds up.** Still compare the photo, and check the card by hand if anything feels off.
+2. **A flagged scan tells you what to look at.** An expired or under-age result settles it. A mismatch means the card needs a closer look and a question only the real holder could answer.
+3. **An unreadable barcode isn't proof of a fake.** Barcodes wear out and crack. Check the card by hand instead.
+
+## Frequently asked questions
+
+### Can a fake ID pass a scanner?
+
+Yes. A fake with a correctly encoded barcode scans clean on any barcode scanner. Scanners catch mistakes in the barcode and cards that are expired or under age, not a well-made counterfeit.
+
+### Do bars legally have to scan IDs?
+
+Rules on scanning, and on keeping the data, differ by state, and some states limit what a business may keep from a scan. Check with your state's alcohol regulator.
+
+### What does it mean if an ID won't scan?
+
+The barcode may be worn, cracked or poorly printed, or the card may not be a US or Canadian license. Treat it as a card to check by hand, not as proof that it's fake.
+
+### Are mobile IDs harder to fake than plastic cards?
+
+Yes. A mobile ID is signed by the issuing state, and the reader checks that signature. A plastic card's barcode carries no signature today.
+
+## Sources
+
+- [AAMVA DL/ID Card Design Standard (2025)](https://www.aamva.org/getmedia/81af105d-8b1b-45e1-aa46-f1800a259ed1/AAMVADLIDCardDesignStandard2025.pdf)
+- [AAMVA: feedback requested on digital key signatures in the card barcode](https://www.aamva.org/publications-news/aamva-news/aamva-card-design-standard-feedback-on-digital-key-signatures-requested)
+- [AAMVA Mobile Driver's License Implementation Guidelines](https://www.aamva.org/getmedia/261ed16b-3f5c-4678-a2db-cc3016934234/MobileDLImplementationGuidelines-Version1-3.pdf)
+- [California ABC: Checking Identification](https://www.abc.ca.gov/education/licensee-education/checking-identification)
+- [Virginia ABC: Detecting Fake IDs](https://www.abc.virginia.gov/licenses/retail-resources/preventing-underage-sales/detecting-fake-ids)
+- [Apple Developer: ID Verifier](https://developer.apple.com/wallet/id-verifier/)
+
+
+---
+
+# How to check an ID at the door
+
+> Use the same routine every time. California's and Virginia's alcohol regulators teach FLAG, which stands for Feel, Look, Ask and Give back. Have the guest take the card out of their wallet, feel it for lifted edges and bumps, check the birth date, expiry and photo, ask a question only the real holder would know, then hand it back or refuse.
+
+Source page: https://coderalert0.github.io/doorproof-site/how-to-check-an-id.html
+Checked against its sources on November 7, 2026. Published by Doorproof, an ID scanner app for iPhone and iPad. Not legal advice.
+
+## Before you start: get the card in your hand
+
+Ask the guest to take the ID out of their wallet or holder. California and Virginia both recommend it. You can't feel a card through plastic, and Virginia notes you may spot a second ID in the wallet.
+
+## F: Feel
+
+- **Rigidity and thickness.** A fake often weighs and flexes differently from a real card.
+- **Edges.** A real card's edges are smooth and rounded all the way around. Lifted corners can mean the card was split and re-laminated.
+- **Bumps and ridges.** Run a thumb over the photo and the birth date, where information is most often cut out and pasted on.
+- **Raised print.** Some states laser-engrave features you can feel. California's cards have a raised signature and a raised date of birth.
+
+## L: Look
+
+- **Do the math.** Count the age from the birth date, or read the "under 21 until" date many states print. California notes that decoy stings often catch staff who asked for ID but never checked the age.
+- **Expiry.** An expired ID isn't acceptable ID in California or Virginia.
+- **Photo.** Hairstyles, makeup and beards change. The shape of the nose, chin, ears and eyes doesn't. Virginia suggests covering facial hair in the photo to compare.
+- **Height and description.** The height, and in some states the weight, should reasonably match the person.
+- **Typeface and spelling.** Computer-made fakes can have wrong fonts, mixed sizes or spelling errors.
+- **Orientation.** AAMVA's card standard specifies a vertical card for drivers under 21. California and Virginia print under-21 cards vertically, so a vertical card at a 21+ door deserves a careful look.
+
+## A: Ask
+
+If anything seems off, ask questions. The real holder answers without thinking.
+
+- Their license number, middle name or ZIP code.
+- Their birth month. California and Virginia both note that someone who answers with a number instead of the month's name may be lying.
+- Their zodiac sign or the year they finished high school.
+- Their companion's name for them, asked of the companion quickly.
+- A signature to compare with the one on the card.
+
+A second ID with the same name can settle it. Virginia suggests comparing a credit card or another card with the name on it.
+
+## G: Give back, or refuse
+
+If the card passes, give it back. If it doesn't, refuse the sale or entry. What you may do with a suspected fake differs by state:
+
+- **California** lets a licensee seize a suspected false ID. Staff must give the person a receipt and turn the ID over to local police within 24 hours.
+- **Virginia** treats the ID as the holder's property. Staff must return it if asked, and only law enforcement may keep it.
+
+Check your own state's rules and your venue's policy before keeping any card.
+
+## Where a scanner fits
+
+A scanner does the math and reads the barcode in a second, which catches expired, under-age and altered cards at a busy door. It can't feel edges or see holograms, and a well-made fake scans clean. Use the scan to decide where to look, then finish with FLAG. See [do ID scanners detect fake IDs?](https://coderalert0.github.io/doorproof-site/do-id-scanners-detect-fake-ids.md)
+
+## Frequently asked questions
+
+### What does FLAG stand for when checking IDs?
+
+Feel, Look, Ask and Give back. It's the routine California's Department of Alcoholic Beverage Control and Virginia ABC teach staff who check IDs.
+
+### What IDs are acceptable for buying alcohol?
+
+It depends on the state. California accepts a valid government-issued card with the name, birth date, photo and physical description, including out-of-state licenses, military IDs and US or foreign passports. Virginia's list includes state driver's licenses, military IDs and US passports. Expired IDs, student IDs and Social Security cards aren't acceptable in either state.
+
+### Can I keep a fake ID?
+
+In California, yes, with a receipt to the person and the card handed to police within 24 hours. In Virginia, no: return it if the person asks, and call law enforcement. Other states have their own rules.
+
+### Why are some driver's licenses vertical?
+
+AAMVA's card design standard specifies a vertical layout for drivers under 21, so staff can spot an under-21 card at a glance. Many states follow it.
+
+## Sources
+
+- [California ABC: Checking Identification](https://www.abc.ca.gov/education/licensee-education/checking-identification)
+- [Virginia ABC: Detecting Fake IDs](https://www.abc.virginia.gov/licenses/retail-resources/preventing-underage-sales/detecting-fake-ids)
+- [AAMVA DL/ID Card Design Standard (2025)](https://www.aamva.org/getmedia/81af105d-8b1b-45e1-aa46-f1800a259ed1/AAMVADLIDCardDesignStandard2025.pdf)
+
+
+---
+
+# What's in the barcode on a driver's license
+
+> The wide barcode on the back of a US or Canadian license is a PDF417 symbol laid out by AAMVA's DL/ID Card Design Standard. It holds the details printed on the front, such as name, birth date, expiry, license number, address and physical description, plus the issuer's six-digit Issuer Identification Number. Each field starts with a three-letter code, such as DBB for date of birth.
+
+Source page: https://coderalert0.github.io/doorproof-site/drivers-license-barcode.html
+Checked against its sources on November 7, 2026. Published by Doorproof, an ID scanner app for iPhone and iPad. Not legal advice.
+
+## The standard behind it
+
+AAMVA, the association of US and Canadian motor vehicle agencies, publishes the DL/ID Card Design Standard. Its Annex D sets out the PDF417 barcode that states and provinces print on the back of driver's licenses and ID cards. The standard is why one scanner can read a card from any state.
+
+## How the barcode starts
+
+The data opens with a header. It contains the characters `ANSI`, then the issuer's six-digit Issuer Identification Number (IIN), then the version of the standard the card follows. AAMVA assigns the IINs: 636014 is California, for example, and 636015 is Texas. A barcode whose IIN doesn't belong to the state printed on the front wasn't made by that state.
+
+## The fields door staff care about
+
+Each field is a three-letter element ID followed by its value.
+
+| Code | Field | What it tells you |
+|---|---|---|
+| DBB | Date of birth | Age, counted to the day |
+| DBA | Expiration date | Whether the card is still valid |
+| DBD | Issue date | When this card was printed |
+| DDJ | Under 21 until | The date the holder turns 21 |
+| DDH | Under 18 until | The date the holder turns 18 |
+| DDI | Under 19 until | The date the holder turns 19 |
+| DCS | Family name | Last name |
+| DAC | First name | First name |
+| DAD | Middle name | Middle name or initial |
+| DAQ | Customer ID number | The license or ID number |
+| DAG, DAI, DAJ, DAK | Street, city, state, postal code | The address on the card |
+| DBC | Sex | 1 male, 2 female, 9 not specified |
+| DAU | Height | Height, to compare with the person |
+| DAY | Eye color | Eye color, to compare with the person |
+
+## Dates are written two ways
+
+US cards write dates as month, day, year (MMDDCCYY). Canadian cards write them as year, month, day (CCYYMMDD). A reader that assumes one order misreads the other country's cards, so a good scanner checks which order makes sense for the issuer.
+
+## Under-21 cards
+
+The standard specifies a vertical card format for drivers under 21, optional in Canada. California and Virginia both print their under-21 cards vertically. A vertical card at a bar door deserves a careful look at the birth date and the under-21 date.
+
+## What the barcode can prove, and what it can't
+
+The fields have to agree with each other. The under-21 date must fall exactly 21 years after the birth date. The issue date must come before the expiry date. The IIN must match the issuing state. When they don't agree, the barcode was edited or built by hand.
+
+When they do agree, the barcode only proves it was encoded correctly. Fake ID sellers encode correct barcodes too. See [do ID scanners detect fake IDs?](https://coderalert0.github.io/doorproof-site/do-id-scanners-detect-fake-ids.md)
+
+## Frequently asked questions
+
+### What type of barcode is on a driver's license?
+
+A PDF417 barcode, a stacked two-dimensional barcode. AAMVA's card design standard defines what goes in it for US and Canadian licenses and ID cards.
+
+### What does DDJ mean on a license barcode?
+
+DDJ is the "Under 21 Until" field: the date the cardholder turns 21. It's written in the same date order as the card's other dates.
+
+### Can a phone read a driver's license barcode?
+
+Yes. Any phone camera can decode PDF417. An app then has to parse the AAMVA fields and check the dates and issuer.
+
+### Does the barcode contain the photo?
+
+No. The standard's barcode holds text fields, not the cardholder's photo, so staff still compare the face to the photo on the card.
+
+## Sources
+
+- [AAMVA DL/ID Card Design Standard (2025)](https://www.aamva.org/getmedia/81af105d-8b1b-45e1-aa46-f1800a259ed1/AAMVADLIDCardDesignStandard2025.pdf)
+- [AAMVA: Issuer Identification Numbers (IIN)](https://www.aamva.org/identity/issuer-identification-numbers-(iin))
+- [California ABC: Checking Identification](https://www.abc.ca.gov/education/licensee-education/checking-identification)
+- [Virginia ABC: Detecting Fake IDs](https://www.abc.virginia.gov/licenses/retail-resources/preventing-underage-sales/detecting-fake-ids)
+
+
+---
+
+# What is a passed-back ID?
+
+> A passed-back ID is a real, unexpired card used twice in one night. Someone of age gets in, then hands their ID out the door to a friend who looks enough like them. The card passes every check because it's genuine, so what catches it is noticing the same card a second time.
+
+Source page: https://coderalert0.github.io/doorproof-site/passed-back-id.html
+Checked against its sources on November 7, 2026. Published by Doorproof, an ID scanner app for iPhone and iPad. Not legal advice.
+
+## A borrowed ID, delivered on the spot
+
+Virginia ABC sorts fake identification into three kinds: false IDs that were manufactured, altered IDs with changed details, and borrowed IDs, valid cards used by someone else. A passed-back ID is a borrowed ID handed over at the door the same night, often through a window, a smoking area or a friend walking back out.
+
+## Why a hand check misses it
+
+Everything about the card is real. The holograms, raised print, barcode and dates all check out, and the birth date is old enough. The only clues are the person:
+
+- The photo is close but not quite. Compare the nose, chin, ears and eyes, which makeup and hairstyles don't change.
+- The height doesn't match.
+- They hesitate over the address, middle name or birth month.
+
+California and Virginia both teach asking those questions when something seems off. See [how to check an ID at the door](https://coderalert0.github.io/doorproof-site/how-to-check-an-id.md).
+
+## How venues catch it
+
+- **Hand stamps and wristbands.** Marking guests who are in makes a second entry harder, but a stamp doesn't follow the card.
+- **A second staff member watching the line.** Someone who notices a guest step back out and return can stop the hand-off.
+- **A record of tonight's scans.** When every ID is scanned, a second scan of the same card in one night stands out. A scanner that keeps that record can say when and at which door the card was first seen, so staff know to look closely at the person in front of them.
+
+## How Doorproof does it
+
+Doorproof warns when the same ID is scanned twice in one night, with the time and door of the first scan. It does this without keeping names. Each card is stored as a keyed code that can't be turned back into a card or a person. The key is made each night and deleted at the venue's closing time. Pass-back alerts are free.
+
+## Frequently asked questions
+
+### Is using someone else's ID illegal?
+
+California lists unlawful use of a driver's license or ID card among its false ID offenses, and Virginia counts a borrowed ID as fake identification. Check your own state's law. The person who sells or serves to a minor can face penalties too.
+
+### Can a scanner tell that an ID belongs to someone else?
+
+Not from the barcode alone. A borrowed card scans clean. A scanner can only flag that the same card was already used tonight, and staff then compare the photo and ask questions.
+
+### Should I check IDs again inside if they were checked at the door?
+
+Virginia ABC recommends it: an ID checked at the door can still be checked again at the bar, because the licensee answers for every drink served.
+
+## Sources
+
+- [Virginia ABC: Detecting Fake IDs](https://www.abc.virginia.gov/licenses/retail-resources/preventing-underage-sales/detecting-fake-ids)
+- [California ABC: Checking Identification](https://www.abc.ca.gov/education/licensee-education/checking-identification)
+
+
+---
+
+# How to check a passport at the door
+
+> Check the photo page. Compare the photo, count the age from the birth date and make sure it hasn't expired. The two lines of letters and chevrons at the bottom are the machine-readable zone set by ICAO Doc 9303. They repeat the passport number, birth date and expiry, each followed by a check digit, so a date changed by hand usually breaks the math.
+
+Source page: https://coderalert0.github.io/doorproof-site/checking-passports.html
+Checked against its sources on November 7, 2026. Published by Doorproof, an ID scanner app for iPhone and iPad. Not legal advice.
+
+## Is a passport acceptable ID?
+
+Usually, but it depends on the state. California accepts US and foreign passports with a photograph, even though they carry no physical description. Virginia's list includes US passports. Check your state's rules and your venue's policy.
+
+## The photo page
+
+A passport carries the details on its data page: photo, name, nationality, date of birth, sex, issue and expiry dates, and the passport number. Check it the way you would a license. Do the math on the birth date, check the expiry and compare the face, focusing on the nose, chin, ears and eyes.
+
+## The machine-readable zone
+
+At the bottom of the data page are two lines of 44 characters each, using capital letters, digits and the `<` filler. ICAO Doc 9303, the international standard for travel documents, defines them.
+
+- **Line 1:** `P`, the issuing country's three-letter code, then the surname and given names separated by `<<`.
+- **Line 2:** the passport number and its check digit, the nationality, the birth date as YYMMDD and its check digit, the sex, the expiry date as YYMMDD and its check digit, an optional personal number and its check digit, and a final check digit over the number, the two dates and the personal number.
+
+Many national ID cards use a three-line version of 30 characters each, with the same idea.
+
+## Check digits catch edits
+
+Each check digit comes from the field just before it. Every character gets a value: digits count as themselves, letters A to Z count as 10 to 35, and `<` counts as 0. The values are multiplied by 7, 3 and 1 in turn, added up, and the last digit of the sum is the check digit. Change one digit of a birth date and the check digit no longer matches. The final check digit covers the passport number, birth date, expiry and personal number together, each with its own check digit.
+
+A matching check digit doesn't prove the passport is real. A forger can compute check digits too. It does mean the lines were encoded consistently, and a mismatch means something was changed.
+
+## Two-digit years
+
+The machine-readable zone writes years with two digits. A reader has to work out the century: a birth year of 05 is 2005, not 1905, for anyone standing at your door. The printed date on the page settles it.
+
+## Frequently asked questions
+
+### Can I scan a passport with a phone?
+
+Yes. An app can read the two machine-readable lines with the camera, check the check digits, and count the age from the birth date.
+
+### Do passports show an under-21 date?
+
+No. Unlike many US licenses, a passport has no "under 21 until" date, so count the age from the birth date.
+
+### Are foreign passports acceptable for alcohol?
+
+California accepts foreign passports with a photograph. Other states differ, so check with your state's alcohol regulator.
+
+## Sources
+
+- [ICAO Doc 9303: Machine Readable Travel Documents](https://www.icao.int/publications/doc-series/doc-9303)
+- [California ABC: Checking Identification](https://www.abc.ca.gov/education/licensee-education/checking-identification)
+- [Virginia ABC: Detecting Fake IDs](https://www.abc.virginia.gov/licenses/retail-resources/preventing-underage-sales/detecting-fake-ids)
+
+
+---
+
+# Doorproof privacy policy
+
+Source page: https://coderalert0.github.io/doorproof-site/privacy.html
+
+Effective November 7, 2026. Doorproof is an app for checking IDs at the door of a business. This policy covers the Doorproof app for iPhone and iPad.
+
+## What the app reads
+Doorproof uses the camera to read the barcode on the back of an ID, a passport's machine-readable lines, or (when staff tap Check front) the printed front of an ID. All of this is read on the device. No image is saved, and nothing read is sent anywhere.
+
+## What is kept on the device
+
+- Always: tonight's counts (admitted, turned away, looked closer, fakes caught) and, for pass-back alerts, a keyed hash of each card scanned tonight. The hash is made with a key created each night and deleted at the venue's closing time, and can't be turned back into a card or a person.
+- With records on (Doorproof Pro, off by default): each scan's time, result, age bracket, issuing state, the checks that raised a question, the staff and door names entered on the device, whether the guest was admitted, and a keyed hash of the card. Names and birth dates are kept only if the venue turns that on. Records are deleted after the number of days the venue chooses (7 by default). They leave the device only if the venue shares an export.
+- Ban and VIP lists (Pro): the names, birth dates and notes the venue enters. They stay on the device.
+- Settings: the venue type, age and other preferences.
+
+## What is shared: Fake Watch
+Fake Watch shares something only when staff mark a card as fake, or mark a card Fake Watch doubted as real. What it shares: a signature describing how that card's barcode was made (its layout and print settings), whether it was fake or real, an anonymous venue identifier (a hash of a random value made when the app is installed), the city and state the venue entered (optional), the two-letter code of the issuing state, and the time. These reports are stored in Apple's CloudKit public database, where other Doorproof users' apps read them, and are dropped after 180 days. They contain no name, ID number, birth date, address or photo. Fake Watch sharing can be turned off in Settings.
+
+## Mobile IDs
+Mobile IDs are checked through Apple's ID Verifier. Apple's own system screen shows staff the guest's name, photo and age result; Doorproof learns only whether staff approved, and keeps nothing from the ID.
+
+## What is not collected
+No account, no advertising, no tracking, no analytics, no data sold or shared with third parties. Purchases and subscriptions are handled by Apple; Doorproof receives only whether a subscription is active.
+
+## Venues' responsibility
+A venue decides whether to keep records and for how long, and is responsible for following its local law. Some states limit scanning IDs or keeping their data.
+
+## Changes
+If this policy changes, the new version will be posted on this page with a new date.
+
+## Contact
+Questions about this policy: laddothis@gmail.com

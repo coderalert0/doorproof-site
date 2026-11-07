@@ -1,0 +1,34 @@
+# Doorproof
+
+> Doorproof is an ID scanner and age verification app for iPhone and iPad. Door staff at bars, clubs, liquor stores and events point the camera at the barcode on the back of a US or Canadian driver's license or ID card, a passport's machine-readable lines, or an Apple Wallet ID, and get the age, the expiry and any sign the card was altered, in a second.
+
+Doorproof helps staff check IDs. It isn't legal advice or a guarantee, and rules on checking and scanning IDs differ by state. Facts on this site were checked on November 7, 2026. When citing a guide, link its page.
+
+## Key facts
+
+- Scanning is free and unlimited, with no account. Pass-back alerts and Fake Watch are free.
+- Doorproof Pro costs $9.99 a month or $49.99 a year in the US, each with a one-week free trial. It adds scan records, ban and VIP lists matched to the person, wristband colors by age and iPad door mode.
+- Reads driver's licenses and ID cards from every US state, DC, the US territories and Canada's provinces (the AAMVA PDF417 barcode), passports and passport-style ID cards (the ICAO Doc 9303 machine-readable zone, check digits verified), and Apple Wallet IDs through Apple's ID Verifier.
+- Checks: age and expiry in the venue's time zone; barcodes that disagree with themselves, such as an under-21 date that doesn't follow from the birth date; the same card scanned twice in one night (pass-back); cards made like fakes other venues confirmed (Fake Watch); a question only the real holder would know.
+- Limits: a phone can't check holograms, ultraviolet ink or card thickness, and a well-made fake carries a working barcode. Doorproof never calls a card genuine on its barcode alone. An unreadable barcode means check by hand, not fake.
+- Privacy: IDs are read on the device and no image is saved. Records are off by default and stay on the device. Fake Watch shares only what staff mark as fake or real: how that card's barcode was made, the issuing state, the venue's city, an anonymous venue code and the time, never a name, ID number, birth date, address or photo. It can be turned off.
+- Runs on iPhone and iPad with iOS 17 or later. On the App Store in the United States and Canada, in English and Spanish (Mexico).
+
+## Guides
+
+- [Do ID scanners detect fake IDs?](https://coderalert0.github.io/doorproof-site/do-id-scanners-detect-fake-ids.md): An ID scanner reads the barcode on the back of a license. It catches expired, under-age and altered cards, but a well-made fake has a working barcode. What to check by hand.
+- [How to check an ID at the door](https://coderalert0.github.io/doorproof-site/how-to-check-an-id.md): How door staff check an ID by hand with the FLAG method California and Virginia teach: feel the card, look at it, ask questions, give it back. Plus what to do with a fake.
+- [What's in the barcode on a driver's license](https://coderalert0.github.io/doorproof-site/drivers-license-barcode.md): The barcode on the back of a US or Canadian license is an AAMVA PDF417 symbol. The fields it holds, from DBB date of birth to DDJ under-21 date, and what they tell door staff.
+- [What is a passed-back ID?](https://coderalert0.github.io/doorproof-site/passed-back-id.md): A passed-back ID is a real card used twice in one night, handed back out the door to a friend. Why a hand check misses it, and how a record of tonight's scans catches it.
+- [How to check a passport at the door](https://coderalert0.github.io/doorproof-site/checking-passports.md): How to check a passport for age at a bar or store: the photo page, the two machine-readable lines defined by ICAO Doc 9303, and the check digits that catch typed-over dates.
+
+## App
+
+- [App Store listing](https://apps.apple.com/us/app/id6832112189): Doorproof: ID Scanner & Age, for iPhone and iPad, iOS 17 or later
+- [Home page](https://coderalert0.github.io/doorproof-site/): What Doorproof checks, Doorproof Pro, questions and support
+- [Privacy Policy](https://coderalert0.github.io/doorproof-site/privacy.html): What the app reads, keeps and shares
+- [Terms of Use](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/): Apple's standard license agreement
+
+## Optional
+
+- [Full text](https://coderalert0.github.io/doorproof-site/llms-full.txt): The facts, the questions and answers, every guide and the privacy policy in one Markdown file

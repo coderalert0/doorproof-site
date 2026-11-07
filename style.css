@@ -40,7 +40,37 @@ details { background:var(--surface); border:1px solid var(--line); border-radius
 summary { cursor:pointer; font-weight:700; } details p { color:var(--muted); margin:10px 0 0; }
 .contact { display:flex; gap:16px; align-items:flex-start; }
 .doc { max-width:760px; margin:0 auto; padding:48px 20px 72px; } .doc p, .doc li { color:var(--muted); } .doc h2 { font-size:24px; margin-top:34px; }
-footer { border-top:1px solid var(--line); margin-top:24px; } footer .in { max-width:1080px; margin:0 auto; padding:26px 20px 40px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; color:var(--muted); font-size:14px; }
-footer nav { display:flex; gap:18px; flex-wrap:wrap; }
+section[id], h2[id] { scroll-margin-top:80px; }
+.muted { color:var(--muted); }
+.nav-cta { background:var(--mint); color:#04110a !important; padding:6px 12px; border-radius:12px; }
+.nav-cta:hover { text-decoration:none; filter:brightness(1.08); }
+.badge { display:inline-flex; align-items:center; } .badge img { display:block; height:50px; width:auto; }
+.contact { margin-top:20px; }
+.guides { list-style:none; padding:0; margin:18px 0 0; display:grid; grid-template-columns:repeat(2, 1fr); gap:14px; }
+.guides a { display:block; height:100%; background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:18px 20px; color:var(--text); }
+.guides a:hover { text-decoration:none; border-color:rgba(52,224,139,.5); }
+.guides strong { display:block; font-size:18px; margin-bottom:4px; } .guides span { color:var(--muted); font-size:15px; }
+.guide { max-width:780px; margin:0 auto; padding:36px 20px 64px; }
+.guide h1 { font-size:44px; }
+.guide h2 { font-size:26px; margin-top:38px; } .guide h3 { margin-top:22px; }
+.guide p, .guide li { color:rgba(255,255,255,.82); } .guide li { margin:6px 0; } .guide strong { color:var(--text); }
+.guide code { background:var(--raised); padding:1px 6px; border-radius:6px; font-size:.9em; }
+.crumbs { font-size:14px; color:var(--muted); } .crumbs a { color:var(--muted); }
+.updated { color:var(--muted); font-size:14px; margin-top:-6px; }
+.answer { background:linear-gradient(135deg, rgba(52,224,139,.13), rgba(52,224,139,.03)); border:1px solid rgba(52,224,139,.3); border-radius:var(--radius); padding:20px 22px; margin:22px 0; }
+.answer h2 { font-size:15px; text-transform:uppercase; letter-spacing:.06em; color:var(--mint); margin:0 0 6px; } .answer p { margin:0; color:var(--text); font-size:18px; }
+.toc { background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:14px 20px; } .toc ul { margin:6px 0 0; padding-left:18px; }
+.table-wrap { overflow-x:auto; margin:16px 0; border:1px solid var(--line); border-radius:16px; }
+table { border-collapse:collapse; width:100%; font-size:15px; } th, td { text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { background:var(--surface); } tr:last-child td { border-bottom:0; } td { color:rgba(255,255,255,.82); }
+.app-cta { display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:20px 22px; margin:40px 0 0; }
+.app-cta h2 { margin:0 0 4px; font-size:22px; } .app-cta p { margin:0; }
+.sources ul, .related ul { padding-left:18px; }
+footer { border-top:1px solid var(--line); margin-top:24px; }
+footer .in { max-width:1080px; margin:0 auto; padding:30px 20px 44px; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:28px; color:var(--muted); font-size:14px; }
+footer .brand { font-size:17px; } footer .brand img { width:28px; height:28px; border-radius:8px; }
+footer nav { display:flex; flex-direction:column; gap:8px; } footer nav a { color:var(--muted); }
+.foot-title { color:var(--text); font-weight:700; margin:0 0 4px; font-size:14px; }
 @media (max-width:860px) { .hero { grid-template-columns:1fr; padding-top:40px; } h1 { font-size:40px; } .grid, .shots { grid-template-columns:1fr 1fr; } }
-@media (max-width:560px) { .grid, .shots { grid-template-columns:1fr; } .nav { gap:14px; } }
+@media (max-width:860px) { footer .in { grid-template-columns:1fr 1fr; } .foot-about { grid-column:1 / -1; } }
+@media (max-width:560px) { .grid, .shots, .guides { grid-template-columns:1fr; } .nav { gap:12px; } .nav a:not(.nav-cta):nth-child(3) { display:none; } .guide h1 { font-size:34px; } }
