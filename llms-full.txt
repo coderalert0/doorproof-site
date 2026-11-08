@@ -411,7 +411,8 @@ Doorproof uses the camera to read the barcode on the back of an ID, a passport's
 
 ## What is kept on the device
 
-- Always: tonight's counts (admitted, turned away, looked closer, fakes caught) and, for pass-back alerts, a keyed hash of each card scanned tonight. The hash is made with a key created each night and deleted at the venue's closing time, and can't be turned back into a card or a person.
+- Always: tonight's counts (admitted, turned away, looked closer, fakes caught).
+- With Doorproof Pro: for pass-back alerts, a keyed hash of each card scanned tonight. The hash is made with a key created each night and deleted at the venue's closing time, and can't be turned back into a card or a person.
 - With records on (Doorproof Pro, off by default): each scan's time, result, age bracket, issuing state, the checks that raised a question, the staff and door names entered on the device, whether the guest was admitted, and a keyed hash of the card. Names and birth dates are kept only if the venue turns that on. Records are deleted after the number of days the venue chooses (7 by default). They leave the device only if the venue shares an export.
 - Ban and VIP lists (Pro): the names, birth dates and notes the venue enters. They stay on the device.
 - Settings: the venue type, age and other preferences.
