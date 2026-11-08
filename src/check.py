@@ -61,39 +61,47 @@ class Page(HTMLParser):
 outside = set()
 sitemap = {e.text for e in ET.parse(ROOT / "sitemap.xml").getroot().iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")}
 # Search Console proves ownership with this file, so it stays in place and is not a page.
-pages = sorted(p for p in ROOT.glob("*.html") if not p.name.startswith("google"))
+pages = sorted(p for p in ROOT.glob("*.html") if not p.name.startswith("google")) + sorted((ROOT / "fr").glob("*.html"))
 
 for path in pages:
     text = path.read_text()
     p = Page()
-    p.name = path.name
+    p.name = str(path.relative_to(ROOT))
     p.feed(text)
     if p.stack:
-        errors.append(f"{path.name}: unclosed tags {p.stack[-3:]}")
+        errors.append(f"{p.name}: unclosed tags {p.stack[-3:]}")
     if p.h1 != 1:
-        errors.append(f"{path.name}: {p.h1} h1 tags")
+        errors.append(f"{p.name}: {p.h1} h1 tags")
     if not 20 <= len(p.title) <= 75:
-        errors.append(f"{path.name}: title is {len(p.title)} characters")
+        errors.append(f"{p.name}: title is {len(p.title)} characters")
     if not p.desc or not 25 <= len(p.desc) <= 175:
-        errors.append(f"{path.name}: description is {len(p.desc or '')} characters")
+        errors.append(f"{p.name}: description is {len(p.desc or '')} characters")
     if "stdeula" not in text or "privacy.html" not in text:
-        errors.append(f"{path.name}: missing the Terms of Use or Privacy Policy link")
+        errors.append(f"{p.name}: missing the Terms of Use or Privacy Policy link")
     for block in p.ld:
         try:
             json.loads(block)
         except ValueError as e:
-            errors.append(f"{path.name}: bad JSON-LD: {e}")
-    if path.name != "404.html" and p.canonical not in sitemap:
-        errors.append(f"{path.name}: canonical {p.canonical} is not in the sitemap")
-    if path.name != "404.html" and not p.ld:
-        errors.append(f"{path.name}: no JSON-LD")
+            errors.append(f"{p.name}: bad JSON-LD: {e}")
+    if p.name != "404.html" and p.canonical not in sitemap:
+        errors.append(f"{p.name}: canonical {p.canonical} is not in the sitemap")
+    if p.name != "404.html" and not p.ld:
+        errors.append(f"{p.name}: no JSON-LD")
     for link in p.links:
         if link.startswith("http"):
             outside.add(link)
             continue
-        target = link.split("#")[0].replace("/doorproof-site/", "")
-        if target and target != "./" and not target.startswith("mailto:") and not (ROOT / target).exists():
-            errors.append(f"{path.name}: broken link {link}")
+        target = link.split("#")[0]
+        if link.startswith("/doorproof-site/"):
+            resolved = ROOT / target.replace("/doorproof-site/", "")
+        else:
+            resolved = path.parent / target   # relative to the page (the French pages are under fr/)
+        if target and target != "./" and not target.startswith("mailto:") and not resolved.exists():
+            errors.append(f"{p.name}: broken link {link}")
+    # Pages in two languages point at each other.
+    for alt in re.findall(r'hreflang="[^"]+" href="([^"]+)"', text):
+        if not (ROOT / alt.replace(BASE, "")).exists() and not (ROOT / alt.replace(BASE, "") / "index.html").exists():
+            errors.append(f"{p.name}: hreflang points at a missing page {alt}")
 
 # The app and App Store Connect link to these, so they must keep working.
 for required in ("index.html", "privacy.html", "llms.txt", "llms-full.txt", "sitemap.xml", "img/og.png", "img/icon-512.png", ".nojekyll", "site.js"):

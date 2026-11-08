@@ -22,6 +22,7 @@ PAGES = ROOT / "src" / "pages"
 BASE = "https://coderalert0.github.io/doorproof-site/"
 APP_ID = "6832112189"
 APP = f"https://apps.apple.com/us/app/id{APP_ID}"
+APP_FR = f"https://apps.apple.com/ca/app/id{APP_ID}?l=fr-CA"   # the Canadian store, in French
 NAME = "Doorproof"
 APP_NAME = "Doorproof: ID Scanner & Age"
 TERMS = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
@@ -44,7 +45,7 @@ FACTS = [
     "Checks: age and expiry in the venue's time zone; barcodes that disagree with themselves, such as an under-21 date that doesn't follow from the birth date; the same card scanned twice in one night (pass-back, with Pro); cards made like fakes other venues confirmed (Fake Watch); a question only the real holder would know.",
     "Limits: a phone can't check holograms, ultraviolet ink or card thickness, and a well-made fake carries a working barcode. Doorproof never calls a card genuine on its barcode alone. An unreadable barcode means check by hand, not fake.",
     "Privacy: IDs are read on the device and no image is saved. Records are off by default and stay on the device. Fake Watch shares only what staff mark as fake or real: how that card's barcode was made, the issuing state, the venue's city, an anonymous venue code and the time, never a name, ID number, birth date, address or photo. It can be turned off.",
-    "Runs on iPhone and iPad with iOS 17 or later. On the App Store in the United States and Canada, in English and Spanish (Mexico).",
+    "Runs on iPhone and iPad with iOS 17 or later. On the App Store in the United States and Canada, in English, French (Canada) and Spanish (Mexico). The home page and privacy policy are also in French: " + BASE + "fr/",
 ]
 
 
@@ -75,23 +76,49 @@ def jsonld(data):
     return f'<script type="application/ld+json">{json.dumps(data, ensure_ascii=False)}</script>'
 
 
+DISCLAIMER_FR = ("Doorproof aide le personnel à vérifier les pièces d'identité. Ce n'est ni un avis juridique ni une garantie, "
+                 "et les règles sur la vérification et le scan des pièces d'identité varient selon la province ou l'État.")
+CHROME = {
+    "en": {"skip": "Skip to content", "how": "How it works", "guides": "Guides", "support": "Support", "privacy": "Privacy",
+           "get": "Get the app", "tagline": "The ID scanner for the door, on iPhone and iPad.", "disclaimer": DISCLAIMER,
+           "app": "App", "policy": "Privacy Policy", "terms": "Terms of Use", "other": ("fr", "Français"),
+           "alt": "Doorproof, the ID scanner for the door, showing a green OK result"},
+    "fr": {"skip": "Aller au contenu", "how": "Comment ça marche", "guides": "Guides", "support": "Soutien", "privacy": "Confidentialité",
+           "get": "Obtenir l'app", "tagline": "Le scanner de pièces d'identité pour la porte, sur iPhone et iPad.", "disclaimer": DISCLAIMER_FR,
+           "app": "Application", "policy": "Politique de confidentialité", "terms": "Conditions d'utilisation", "other": ("en", "English"),
+           "alt": "Doorproof, le scanner de pièces d'identité pour la porte, affichant un résultat vert OK"},
+}
+# Pages that exist in both languages: (English path, French path) under BASE.
+TWINS = {"index": ("", "fr/"), "privacy": ("privacy.html", "fr/privacy.html")}
+
+
 def page(slug, title, description, body, *, schema=(), kind="article", current="", root="", markdown_twin=False,
-         robots="index,follow,max-snippet:-1,max-image-preview:large"):
-    url = BASE if slug == "index" else f"{BASE}{slug}.html"
+         robots="index,follow,max-snippet:-1,max-image-preview:large", lang="en"):
+    c = CHROME[lang]
+    twin = TWINS.get(slug.removeprefix("fr/"))
+    url = BASE + (twin[1] if lang == "fr" else twin[0]) if twin else (BASE if slug == "index" else f"{BASE}{slug}.html")
+    hreflang = ""
+    if twin:
+        hreflang = (f'\n<link rel="alternate" hreflang="en" href="{BASE}{twin[0]}">'
+                    f'\n<link rel="alternate" hreflang="fr-CA" href="{BASE}{twin[1]}">'
+                    f'\n<link rel="alternate" hreflang="x-default" href="{BASE}{twin[0]}">')
+    # The other language: this page's twin, or the other language's home page.
+    other = BASE + ((twin[0] if lang == "fr" else twin[1]) if twin else ("" if lang == "fr" else "fr/"))
     e = html.escape
     alternate = f'\n<link rel="alternate" type="text/markdown" href="{root}{slug}.md">' if markdown_twin else ""
     ld = "\n".join(jsonld(item) for item in schema)
     here = lambda name: ' aria-current="page"' if name == current else ""
-    home = root or "./"
+    home = "./" if lang == "fr" else (root or "./")
+    app = APP_FR if lang == "fr" else APP
     return f"""<!doctype html>
-<html lang="en">
+<html lang="{'fr-CA' if lang == 'fr' else 'en'}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)}</title>
 <meta name="description" content="{e(description)}">
 <meta name="robots" content="{robots}">
-<link rel="canonical" href="{url}">{alternate}
+<link rel="canonical" href="{url}">{alternate}{hreflang}
 <meta name="theme-color" content="#f6f8f7">
 <meta name="apple-itunes-app" content="app-id={APP_ID}">
 <meta property="og:type" content="{kind}">
@@ -102,7 +129,7 @@ def page(slug, title, description, body, *, schema=(), kind="article", current="
 <meta property="og:image" content="{BASE}img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Doorproof, the ID scanner for the door, showing a green OK result">
+<meta property="og:image:alt" content="{e(c["alt"])}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{root}icon.png">
 <link rel="apple-touch-icon" href="{root}icon.png">
@@ -111,16 +138,17 @@ def page(slug, title, description, body, *, schema=(), kind="article", current="
 {ld}
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">{c["skip"]}</a>
 <header class="topbar">
   <div class="topbar-in">
     <a class="brand" href="{home}"><img src="{root}icon.png" alt="" width="34" height="34"><span>{NAME}</span></a>
     <nav class="nav" aria-label="Site">
-      <a href="{home}#how"{here("home")}>How it works</a>
-      <a href="{home}#guides"{here("guides")}>Guides</a>
-      <a href="{home}#support">Support</a>
-      <a href="{root}privacy.html"{here("privacy")}>Privacy</a>
-      <a class="nav-cta" href="{APP}">Get the app</a>
+      <a href="{home}#how"{here("home")}>{c["how"]}</a>
+      <a href="{home}#guides"{here("guides")}>{c["guides"]}</a>
+      <a href="{home}#support">{c["support"]}</a>
+      <a href="{home if lang == "fr" else root}privacy.html"{here("privacy")}>{c["privacy"]}</a>
+      <a href="{other}" hreflang="{"fr-CA" if c["other"][0] == "fr" else "en"}" lang="{"fr-CA" if c["other"][0] == "fr" else "en"}">{c["other"][1]}</a>
+      <a class="nav-cta" href="{app}">{c["get"]}</a>
     </nav>
   </div>
 </header>
@@ -131,11 +159,11 @@ def page(slug, title, description, body, *, schema=(), kind="article", current="
   <div class="in">
     <div class="foot-about">
       <a class="brand" href="{home}"><img src="{root}icon.png" alt="" width="28" height="28"><span>{NAME}</span></a>
-      <p>The ID scanner for the door, on iPhone and iPad.</p>
-      <p>© 2026 {NAME}. {DISCLAIMER}</p>
+      <p>{c["tagline"]}</p>
+      <p>© 2026 {NAME}. {c["disclaimer"]}</p>
     </div>
-    <nav aria-label="Guides"><p class="foot-title">Guides</p>{FOOTER_GUIDES.replace('href="', f'href="{root}')}</nav>
-    <nav aria-label="App"><p class="foot-title">App</p><a href="{APP}">App Store</a><a href="{home}#support">Support</a><a href="{root}privacy.html">Privacy Policy</a><a href="{TERMS}">Terms of Use</a><a href="{root}llms.txt">llms.txt</a></nav>
+    <nav aria-label="Guides"><p class="foot-title">{c["guides"]}</p>{FOOTER_GUIDES.replace('href="', f'href="{root}')}</nav>
+    <nav aria-label="App"><p class="foot-title">{c["app"]}</p><a href="{app}">App Store</a><a href="{home}#support">{c["support"]}</a><a href="{home if lang == "fr" else root}privacy.html">{c["policy"]}</a><a href="{TERMS}">{c["terms"]}</a><a href="{root}llms.txt">llms.txt</a></nav>
   </div>
 </footer>
 <script src="{root}site.js"></script>
@@ -252,7 +280,7 @@ home_schema = [
      "installUrl": APP, "downloadUrl": APP, "operatingSystem": "iOS 17.0 or later", "applicationCategory": "BusinessApplication",
      "description": SUMMARY, "image": BASE + "img/icon-512.png", "screenshot": [BASE + f"img/{n}.jpg" for n in ("1-demo", "2-mismatch", "3-fakewatch", "4-passback")],
      "featureList": ["Age and expiry check", "Altered ID check", "Pass-back alerts (Pro)", "Fake Watch", "Passport MRZ reading", "Apple Wallet ID verification", "Scan records (Pro)", "Door counter (Pro)", "Shared pass-backs and lists across devices (Venue)", "Ban and VIP lists (Pro)", "Wristbands by age (Pro)", "iPad door mode (Pro)"],
-     "inLanguage": ["en", "es-MX"], "publisher": PUBLISHER,
+     "inLanguage": ["en", "fr-CA", "es-MX"], "publisher": PUBLISHER,
      "offers": [{"@type": "Offer", "name": "Doorproof", "price": "0", "priceCurrency": "USD"},
                 {"@type": "Offer", "name": "Doorproof Pro, monthly", "price": "9.99", "priceCurrency": "USD"},
                 {"@type": "Offer", "name": "Doorproof Pro, yearly", "price": "49.99", "priceCurrency": "USD"},
@@ -271,12 +299,33 @@ privacy = (PAGES / "privacy.body.html").read_text()
      "dateModified": "2026-11-07", "publisher": PUBLISHER, "inLanguage": "en-US",
      "about": {"@type": "MobileApplication", "name": APP_NAME, "url": BASE}}]))
 
+# French (for Quebec venues): the home page and the privacy policy, under fr/. The guides stay in English.
+FR = ROOT / "fr"
+FR.mkdir(exist_ok=True)
+cards_fr = "".join(f'<li><a href="../{g["slug"]}.html" hreflang="en"><strong>{html.escape(g["h1"])}</strong><span>{html.escape(g["description"])}</span></a></li>' for g in guides)
+home_fr = (PAGES / "home.fr.html").read_text().replace("{APP}", APP_FR).replace("{GUIDES}", f'<ul class="guides">{cards_fr}</ul>')
+faqs_fr = re.findall(r"<details><summary>(.+?)</summary><p>(.+?)</p></details>", home_fr)
+HOME_TITLE_FR = "Doorproof\u00a0: scanner d'identité et vérification de l'âge"
+HOME_DESCRIPTION_FR = ("Scan de pièces d'identité gratuit et illimité sur iPhone et iPad\u00a0: l'âge et l'expiration en une seconde, "
+                       "les cartes modifiées et Fake Watch.")
+(FR / "index.html").write_text(page("fr/index", HOME_TITLE_FR, HOME_DESCRIPTION_FR, home_fr, kind="website", current="home", root="../", lang="fr", schema=[
+    {"@context": "https://schema.org", "@type": "WebSite", "name": NAME, "url": BASE + "fr/", "description": HOME_DESCRIPTION_FR, "publisher": PUBLISHER, "inLanguage": "fr-CA"},
+    {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "fr-CA", "mainEntity": [
+        {"@type": "Question", "name": plain(q), "acceptedAnswer": {"@type": "Answer", "text": plain(a)}} for q, a in faqs_fr]}]))
+privacy_fr = (PAGES / "privacy.body.fr.html").read_text()
+(FR / "privacy.html").write_text(page("fr/privacy", f"Politique de confidentialité · {NAME}",
+                                      "Ce que l'application Doorproof lit, ce qu'elle conserve sur l'appareil et le peu qu'elle partage.",
+                                      f'<div class="doc">\n{privacy_fr}</div>', current="privacy", root="../", lang="fr", schema=[
+    {"@context": "https://schema.org", "@type": "WebPage", "name": f"Politique de confidentialité de {NAME}", "url": f"{BASE}fr/privacy.html",
+     "dateModified": "2026-11-07", "publisher": PUBLISHER, "inLanguage": "fr-CA", "about": {"@type": "MobileApplication", "name": APP_NAME, "url": BASE}}]))
+
 # 404 is served at any depth, so its links are absolute.
 missing = '<div class="doc"><h1>Page not found</h1><p>That page has moved or never existed.</p><p><a href="/doorproof-site/">Go to Doorproof\'s home page</a> or read <a href="/doorproof-site/how-to-check-an-id.html">how to check an ID at the door</a>.</p></div>'
 (ROOT / "404.html").write_text(page("404", f"Page not found · {NAME}", "This page could not be found.", missing, robots="noindex", root="/doorproof-site/"))
 
 # Sitemap
-urls = [(BASE, "1.0")] + [(f'{BASE}{g["slug"]}.html', "0.8") for g in guides] + [(f"{BASE}privacy.html", "0.3")]
+urls = ([(BASE, "1.0"), (f"{BASE}fr/", "0.9")] + [(f'{BASE}{g["slug"]}.html', "0.8") for g in guides]
+        + [(f"{BASE}privacy.html", "0.3"), (f"{BASE}fr/privacy.html", "0.3")])
 entries = "".join(f"  <url><loc>{u}</loc><lastmod>{UPDATED}</lastmod><priority>{p}</priority></url>\n" for u, p in urls)
 (ROOT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{entries}</urlset>\n')
 
@@ -319,4 +368,4 @@ full += [guide_markdown(g) for g in guides]
 full.append(f"# Doorproof privacy policy\n\nSource page: {BASE}privacy.html\n\n{privacy_md}\n")
 (ROOT / "llms-full.txt").write_text("\n\n---\n\n".join(full))
 (ROOT / ".nojekyll").write_text("")
-print(f"built home, privacy, 404 and {len(guides)} guides")
+print(f"built home, privacy, their French pages, 404 and {len(guides)} guides")

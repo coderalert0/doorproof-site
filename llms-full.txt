@@ -13,7 +13,7 @@ Doorproof helps staff check IDs. It isn't legal advice or a guarantee, and rules
 - Checks: age and expiry in the venue's time zone; barcodes that disagree with themselves, such as an under-21 date that doesn't follow from the birth date; the same card scanned twice in one night (pass-back, with Pro); cards made like fakes other venues confirmed (Fake Watch); a question only the real holder would know.
 - Limits: a phone can't check holograms, ultraviolet ink or card thickness, and a well-made fake carries a working barcode. Doorproof never calls a card genuine on its barcode alone. An unreadable barcode means check by hand, not fake.
 - Privacy: IDs are read on the device and no image is saved. Records are off by default and stay on the device. Fake Watch shares only what staff mark as fake or real: how that card's barcode was made, the issuing state, the venue's city, an anonymous venue code and the time, never a name, ID number, birth date, address or photo. It can be turned off.
-- Runs on iPhone and iPad with iOS 17 or later. On the App Store in the United States and Canada, in English and Spanish (Mexico).
+- Runs on iPhone and iPad with iOS 17 or later. On the App Store in the United States and Canada, in English, French (Canada) and Spanish (Mexico). The home page and privacy policy are also in French: https://coderalert0.github.io/doorproof-site/fr/
 
 ## Questions and answers
 
@@ -25,6 +25,10 @@ Yes. Scanning is free and unlimited, with Fake Watch included and no account. Do
 
 With Doorproof Venue, the owner taps Settings > Your venue's devices > Invite staff devices and sends the invitation by Messages or Mail. Staff open it on their iPhone or iPad, signed in to their own Apple Account, and Doorproof joins the venue: the same pass-back list, counts and ban list at every door, through the owner's iCloud.
 
+### What age does it use in Canada?
+
+On the first run, pick your province or territory and your kind of venue, and Doorproof sets the legal age to match: for example 18 for a bar in Quebec, Alberta and Manitoba, 19 elsewhere, and 21 for cannabis in Quebec. You can change it any time in Settings, and you confirm the age that applies to your venue.
+
 ### Which IDs does it read?
 
 Driver's licenses and ID cards from every US state, DC, the US territories and Canada's provinces, from the barcode on the back. Passports and passport-style ID cards from the machine-readable lines. Apple Wallet IDs through Apple's ID Verifier.
@@ -35,7 +39,7 @@ It catches what a barcode can show: expired and under-age cards, altered cards w
 
 ### Which devices does it run on?
 
-iPhone and iPad with iOS 17 or later. It's on the App Store in the United States and Canada, in English and Spanish.
+iPhone and iPad with iOS 17 or later. It's on the App Store in the United States and Canada, in English, French and Spanish.
 
 ### It won't read a card
 

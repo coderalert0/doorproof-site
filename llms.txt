@@ -13,7 +13,7 @@ Doorproof helps staff check IDs. It isn't legal advice or a guarantee, and rules
 - Checks: age and expiry in the venue's time zone; barcodes that disagree with themselves, such as an under-21 date that doesn't follow from the birth date; the same card scanned twice in one night (pass-back, with Pro); cards made like fakes other venues confirmed (Fake Watch); a question only the real holder would know.
 - Limits: a phone can't check holograms, ultraviolet ink or card thickness, and a well-made fake carries a working barcode. Doorproof never calls a card genuine on its barcode alone. An unreadable barcode means check by hand, not fake.
 - Privacy: IDs are read on the device and no image is saved. Records are off by default and stay on the device. Fake Watch shares only what staff mark as fake or real: how that card's barcode was made, the issuing state, the venue's city, an anonymous venue code and the time, never a name, ID number, birth date, address or photo. It can be turned off.
-- Runs on iPhone and iPad with iOS 17 or later. On the App Store in the United States and Canada, in English and Spanish (Mexico).
+- Runs on iPhone and iPad with iOS 17 or later. On the App Store in the United States and Canada, in English, French (Canada) and Spanish (Mexico). The home page and privacy policy are also in French: https://coderalert0.github.io/doorproof-site/fr/
 
 ## Guides
 
