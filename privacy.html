@@ -52,9 +52,12 @@
     <li><strong>Always:</strong> tonight's counts (admitted, turned away, looked closer, fakes caught).</li>
     <li><strong>With Doorproof Pro:</strong> for pass-back alerts, a keyed hash of each card scanned tonight. The hash is made with a key created each night and deleted at the venue's closing time, and can't be turned back into a card or a person.</li>
     <li><strong>With records on (Doorproof Pro, off by default):</strong> each scan's time, result, age bracket, issuing state, the checks that raised a question, the staff and door names entered on the device, whether the guest was admitted, and a keyed hash of the card. Names and birth dates are kept only if the venue turns that on. Records are deleted after the number of days the venue chooses (7 by default). They leave the device only if the venue shares an export.</li>
-    <li><strong>Ban and VIP lists (Pro):</strong> the names, birth dates and notes the venue enters. They stay on the device.</li>
+    <li><strong>Ban and VIP lists (Pro):</strong> the names, birth dates and notes the venue enters. They stay on the device (with Doorproof Venue, on the venue's devices: see below).</li>
     <li><strong>Settings:</strong> the venue type, age and other preferences.</li>
   </ul>
+
+  <h2>What is shared: Doorproof Venue</h2>
+  <p>With Doorproof Venue, a venue's devices share, through the venue owner's iCloud: tonight's key and the keyed hashes of cards scanned tonight, with the time and the door name (for pass-back alerts at every door); each device's counts for the night; the ban and VIP lists (names, birth dates and notes); and the venue's name. Only devices the owner invites, signed in to their own Apple Account, can read them. Each item is stored in end-to-end encrypted fields, so neither Apple nor we can read it. Keys, hashes and counts are deleted at the venue's closing time; the lists stay until the venue removes them or stops sharing. Scan records are never shared: they stay on the device that made them.</p>
 
   <h2>What is shared: Fake Watch</h2>
   <p>Fake Watch shares something only when staff mark a card as fake, or mark a card Fake Watch doubted as real. What it shares: a signature describing how that card's barcode was made (its layout and print settings), whether it was fake or real, an anonymous venue identifier (a hash of a random value made when the app is installed), the city and state the venue entered (optional), the two-letter code of the issuing state, and the time. These reports are stored in Apple's CloudKit public database, where other Doorproof users' apps read them, and are dropped after 180 days. They contain no name, ID number, birth date, address or photo. Fake Watch sharing can be turned off in Settings.</p>

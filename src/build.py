@@ -38,7 +38,8 @@ SUMMARY = ("Doorproof is an ID scanner and age verification app for iPhone and i
            "the card was altered, in a second.")
 FACTS = [
     "Scanning is free and unlimited, with no account. Fake Watch is free.",
-    "Doorproof Pro costs $9.99 a month or $49.99 a year in the US, with a one-week free trial for new subscribers. It adds pass-back alerts (the same card twice in one night), scan records with a one-tap nightly report, ban and VIP lists matched to the person, wristband colors by age and iPad door mode.",
+    "Doorproof Pro costs $9.99 a month or $49.99 a year in the US, with a one-week free trial for new subscribers. It adds pass-back alerts (the same card twice in one night), scan records with a one-tap nightly report, a door counter, ban and VIP lists matched to the person, wristband colors by age and iPad door mode.",
+    "Doorproof Venue costs $29.99 a month or $249.99 a year in the US: everything in Pro on every device at a venue, sharing one pass-back list, tonight's counts and the ban and VIP lists through the owner's iCloud.",
     "Reads driver's licenses and ID cards from every US state, DC, the US territories and Canada's provinces (the AAMVA PDF417 barcode), passports and passport-style ID cards (the ICAO Doc 9303 machine-readable zone, check digits verified), and Apple Wallet IDs through Apple's ID Verifier.",
     "Checks: age and expiry in the venue's time zone; barcodes that disagree with themselves, such as an under-21 date that doesn't follow from the birth date; the same card scanned twice in one night (pass-back, with Pro); cards made like fakes other venues confirmed (Fake Watch); a question only the real holder would know.",
     "Limits: a phone can't check holograms, ultraviolet ink or card thickness, and a well-made fake carries a working barcode. Doorproof never calls a card genuine on its barcode alone. An unreadable barcode means check by hand, not fake.",
@@ -250,11 +251,13 @@ home_schema = [
     {"@context": "https://schema.org", "@type": "MobileApplication", "name": APP_NAME, "alternateName": NAME, "url": BASE,
      "installUrl": APP, "downloadUrl": APP, "operatingSystem": "iOS 17.0 or later", "applicationCategory": "BusinessApplication",
      "description": SUMMARY, "image": BASE + "img/icon-512.png", "screenshot": [BASE + f"img/{n}.jpg" for n in ("1-demo", "2-mismatch", "3-fakewatch", "4-passback")],
-     "featureList": ["Age and expiry check", "Altered ID check", "Pass-back alerts (Pro)", "Fake Watch", "Passport MRZ reading", "Apple Wallet ID verification", "Scan records (Pro)", "Ban and VIP lists (Pro)", "Wristbands by age (Pro)", "iPad door mode (Pro)"],
+     "featureList": ["Age and expiry check", "Altered ID check", "Pass-back alerts (Pro)", "Fake Watch", "Passport MRZ reading", "Apple Wallet ID verification", "Scan records (Pro)", "Door counter (Pro)", "Shared pass-backs and lists across devices (Venue)", "Ban and VIP lists (Pro)", "Wristbands by age (Pro)", "iPad door mode (Pro)"],
      "inLanguage": ["en", "es-MX"], "publisher": PUBLISHER,
      "offers": [{"@type": "Offer", "name": "Doorproof", "price": "0", "priceCurrency": "USD"},
                 {"@type": "Offer", "name": "Doorproof Pro, monthly", "price": "9.99", "priceCurrency": "USD"},
-                {"@type": "Offer", "name": "Doorproof Pro, yearly", "price": "49.99", "priceCurrency": "USD"}]},
+                {"@type": "Offer", "name": "Doorproof Pro, yearly", "price": "49.99", "priceCurrency": "USD"},
+                {"@type": "Offer", "name": "Doorproof Venue, monthly", "price": "29.99", "priceCurrency": "USD"},
+                {"@type": "Offer", "name": "Doorproof Venue, yearly", "price": "249.99", "priceCurrency": "USD"}]},
     {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": plain(q), "acceptedAnswer": {"@type": "Answer", "text": plain(a)}} for q, a in faqs]},
 ]

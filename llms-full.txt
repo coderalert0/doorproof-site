@@ -7,7 +7,8 @@ Doorproof helps staff check IDs. It isn't legal advice or a guarantee, and rules
 ## Key facts
 
 - Scanning is free and unlimited, with no account. Fake Watch is free.
-- Doorproof Pro costs $9.99 a month or $49.99 a year in the US, with a one-week free trial for new subscribers. It adds pass-back alerts (the same card twice in one night), scan records with a one-tap nightly report, ban and VIP lists matched to the person, wristband colors by age and iPad door mode.
+- Doorproof Pro costs $9.99 a month or $49.99 a year in the US, with a one-week free trial for new subscribers. It adds pass-back alerts (the same card twice in one night), scan records with a one-tap nightly report, a door counter, ban and VIP lists matched to the person, wristband colors by age and iPad door mode.
+- Doorproof Venue costs $29.99 a month or $249.99 a year in the US: everything in Pro on every device at a venue, sharing one pass-back list, tonight's counts and the ban and VIP lists through the owner's iCloud.
 - Reads driver's licenses and ID cards from every US state, DC, the US territories and Canada's provinces (the AAMVA PDF417 barcode), passports and passport-style ID cards (the ICAO Doc 9303 machine-readable zone, check digits verified), and Apple Wallet IDs through Apple's ID Verifier.
 - Checks: age and expiry in the venue's time zone; barcodes that disagree with themselves, such as an under-21 date that doesn't follow from the birth date; the same card scanned twice in one night (pass-back, with Pro); cards made like fakes other venues confirmed (Fake Watch); a question only the real holder would know.
 - Limits: a phone can't check holograms, ultraviolet ink or card thickness, and a well-made fake carries a working barcode. Doorproof never calls a card genuine on its barcode alone. An unreadable barcode means check by hand, not fake.
@@ -18,7 +19,11 @@ Doorproof helps staff check IDs. It isn't legal advice or a guarantee, and rules
 
 ### Is Doorproof free?
 
-Yes. Scanning is free and unlimited, with Fake Watch included and no account. Doorproof Pro adds pass-back alerts, scan records with a nightly report, ban and VIP lists, wristbands and iPad door mode for $9.99 a month or $49.99 a year in the US, with a free week first for new subscribers.
+Yes. Scanning is free and unlimited, with Fake Watch included and no account. Doorproof Pro adds pass-back alerts, scan records with a nightly report, a door counter, ban and VIP lists, wristbands and iPad door mode for $9.99 a month or $49.99 a year in the US. Doorproof Venue puts Pro on every device at your venue, sharing one pass-back list, counts and lists, for $29.99 a month or $249.99 a year. Each has a free week first for new subscribers.
+
+### How do several doors share one list?
+
+With Doorproof Venue, the owner taps Settings > Your venue's devices > Invite staff devices and sends the invitation by Messages or Mail. Staff open it on their iPhone or iPad, signed in to their own Apple Account, and Doorproof joins the venue: the same pass-back list, counts and ban list at every door, through the owner's iCloud.
 
 ### Which IDs does it read?
 
@@ -414,8 +419,11 @@ Doorproof uses the camera to read the barcode on the back of an ID, a passport's
 - Always: tonight's counts (admitted, turned away, looked closer, fakes caught).
 - With Doorproof Pro: for pass-back alerts, a keyed hash of each card scanned tonight. The hash is made with a key created each night and deleted at the venue's closing time, and can't be turned back into a card or a person.
 - With records on (Doorproof Pro, off by default): each scan's time, result, age bracket, issuing state, the checks that raised a question, the staff and door names entered on the device, whether the guest was admitted, and a keyed hash of the card. Names and birth dates are kept only if the venue turns that on. Records are deleted after the number of days the venue chooses (7 by default). They leave the device only if the venue shares an export.
-- Ban and VIP lists (Pro): the names, birth dates and notes the venue enters. They stay on the device.
+- Ban and VIP lists (Pro): the names, birth dates and notes the venue enters. They stay on the device (with Doorproof Venue, on the venue's devices: see below).
 - Settings: the venue type, age and other preferences.
+
+## What is shared: Doorproof Venue
+With Doorproof Venue, a venue's devices share, through the venue owner's iCloud: tonight's key and the keyed hashes of cards scanned tonight, with the time and the door name (for pass-back alerts at every door); each device's counts for the night; the ban and VIP lists (names, birth dates and notes); and the venue's name. Only devices the owner invites, signed in to their own Apple Account, can read them. Each item is stored in end-to-end encrypted fields, so neither Apple nor we can read it. Keys, hashes and counts are deleted at the venue's closing time; the lists stay until the venue removes them or stops sharing. Scan records are never shared: they stay on the device that made them.
 
 ## What is shared: Fake Watch
 Fake Watch shares something only when staff mark a card as fake, or mark a card Fake Watch doubted as real. What it shares: a signature describing how that card's barcode was made (its layout and print settings), whether it was fake or real, an anonymous venue identifier (a hash of a random value made when the app is installed), the city and state the venue entered (optional), the two-letter code of the issuing state, and the time. These reports are stored in Apple's CloudKit public database, where other Doorproof users' apps read them, and are dropped after 180 days. They contain no name, ID number, birth date, address or photo. Fake Watch sharing can be turned off in Settings.
