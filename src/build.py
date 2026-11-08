@@ -91,7 +91,7 @@ def page(slug, title, description, body, *, schema=(), kind="article", current="
 <meta name="description" content="{e(description)}">
 <meta name="robots" content="{robots}">
 <link rel="canonical" href="{url}">{alternate}
-<meta name="theme-color" content="#090c12">
+<meta name="theme-color" content="#f6f8f7">
 <meta name="apple-itunes-app" content="app-id={APP_ID}">
 <meta property="og:type" content="{kind}">
 <meta property="og:site_name" content="{NAME}">
@@ -195,25 +195,29 @@ Checked against its sources on {UPDATED_LONG}. Published by {NAME}, an ID scanne
 
 
 def social_card():
-    """img/og.png: 1200x630, the app's colors, name and promise beside the first App Store screenshot."""
+    """img/og.png: 1200x630, light, the app's name and promise beside the first App Store screenshot."""
     W, H = 1200, 630
-    card = Image.new("RGB", (W, H), (9, 12, 18))
+    card = Image.new("RGB", (W, H), (246, 248, 247))
     d = ImageDraw.Draw(card)
     font = lambda size, bold=True: ImageFont.truetype("/System/Library/Fonts/HelveticaNeue.ttc", size, index=1 if bold else 0)
     icon = Image.open(ROOT / "img" / "icon-512.png").convert("RGBA").resize((96, 96), Image.LANCZOS)
     mask = Image.new("L", (96, 96), 0)
     ImageDraw.Draw(mask).rounded_rectangle((0, 0, 95, 95), 22, fill=255)
     card.paste(icon, (72, 76), mask)
-    d.text((186, 96), NAME, font=font(56), fill=(255, 255, 255))
+    d.text((186, 96), NAME, font=font(56), fill=(12, 21, 32))
     y = 232
     for line in ["Check IDs at the door,", "in a second."]:
-        d.text((72, y), line, font=font(62), fill=(52, 224, 139) if line == "in a second." else (255, 255, 255))
+        d.text((72, y), line, font=font(62), fill=(8, 122, 73) if line == "in a second." else (12, 21, 32))
         y += 76
-    d.text((72, y + 26), "Free ID scanner and age check for", font=font(30, False), fill=(200, 205, 214))
-    d.text((72, y + 66), "bars, clubs and stores. iPhone and iPad.", font=font(30, False), fill=(200, 205, 214))
+    d.text((72, y + 26), "Free ID scanner and age check for", font=font(30, False), fill=(91, 102, 112))
+    d.text((72, y + 66), "bars, clubs and stores. iPhone and iPad.", font=font(30, False), fill=(91, 102, 112))
     shot = Image.open(ROOT / "img" / "1-demo.jpg").convert("RGB")
     sw = 300
     shot = shot.resize((sw, round(shot.height * sw / shot.width)), Image.LANCZOS)
+    shadow = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(shadow).rounded_rectangle((W - sw - 90 + 6, 48 + 18, W - 90 + 6, 48 + shot.height + 18), 36, fill=70)
+    from PIL import ImageFilter
+    card.paste((200, 208, 204), (0, 0), shadow.filter(ImageFilter.GaussianBlur(22)))
     smask = Image.new("L", shot.size, 0)
     ImageDraw.Draw(smask).rounded_rectangle((0, 0, shot.width - 1, shot.height - 1), 36, fill=255)
     card.paste(shot, (W - sw - 90, 48), smask)
@@ -224,6 +228,7 @@ def social_card():
 art = Path.home() / "doorproof-app" / "App" / "Assets.xcassets" / "AppIcon.appiconset" / "icon-1024.png"
 if art.exists():
     Image.open(art).convert("RGB").resize((512, 512), Image.LANCZOS).save(ROOT / "img" / "icon-512.png", optimize=True)
+    Image.open(art).convert("RGB").resize((180, 180), Image.LANCZOS).save(ROOT / "icon.png", optimize=True)   # favicon and touch icon
 social_card()
 
 guides = [parse(p) for p in sorted((PAGES / "guides").glob("*.md"))]
