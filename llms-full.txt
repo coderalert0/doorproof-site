@@ -43,7 +43,7 @@ iPhone and iPad with iOS 17 or later. It's on the App Store in the United States
 
 ### It won't read a card
 
-Hold the back of the card flat, filling the frame, about a hand's width from the camera. In a dark room, tap the flashlight. If a barcode is worn or damaged, Doorproof says "Check by hand": that doesn't mean the card is fake.
+Hold the back of the card flat, about 20 cm (8 inches) from the camera, so the barcode fills most of the frame. In a dark room, tap the flashlight. If a barcode is worn or damaged, Doorproof says "Check by hand": that doesn't mean the card is fake.
 
 ### It said "Look closer"
 
