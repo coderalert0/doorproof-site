@@ -38,7 +38,7 @@ SUMMARY = ("Doorproof is an ID scanner and age verification app for iPhone and i
            "the card was altered, in a second.")
 FACTS = [
     "Scanning is free and unlimited, with no account. Fake Watch is free.",
-    "Doorproof Pro costs $9.99 a month or $49.99 a year in the US, each with a one-week free trial. It adds pass-back alerts (the same card twice in one night), scan records with a one-tap nightly report, ban and VIP lists matched to the person, wristband colors by age and iPad door mode.",
+    "Doorproof Pro costs $9.99 a month or $49.99 a year in the US, with a one-week free trial for new subscribers. It adds pass-back alerts (the same card twice in one night), scan records with a one-tap nightly report, ban and VIP lists matched to the person, wristband colors by age and iPad door mode.",
     "Reads driver's licenses and ID cards from every US state, DC, the US territories and Canada's provinces (the AAMVA PDF417 barcode), passports and passport-style ID cards (the ICAO Doc 9303 machine-readable zone, check digits verified), and Apple Wallet IDs through Apple's ID Verifier.",
     "Checks: age and expiry in the venue's time zone; barcodes that disagree with themselves, such as an under-21 date that doesn't follow from the birth date; the same card scanned twice in one night (pass-back, with Pro); cards made like fakes other venues confirmed (Fake Watch); a question only the real holder would know.",
     "Limits: a phone can't check holograms, ultraviolet ink or card thickness, and a well-made fake carries a working barcode. Doorproof never calls a card genuine on its barcode alone. An unreadable barcode means check by hand, not fake.",
