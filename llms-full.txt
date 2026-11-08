@@ -6,10 +6,10 @@ Doorproof helps staff check IDs. It isn't legal advice or a guarantee, and rules
 
 ## Key facts
 
-- Scanning is free and unlimited, with no account. Pass-back alerts and Fake Watch are free.
-- Doorproof Pro costs $9.99 a month or $49.99 a year in the US, each with a one-week free trial. It adds scan records, ban and VIP lists matched to the person, wristband colors by age and iPad door mode.
+- Scanning is free and unlimited, with no account. Fake Watch is free.
+- Doorproof Pro costs $9.99 a month or $49.99 a year in the US, each with a one-week free trial. It adds pass-back alerts (the same card twice in one night), scan records with a one-tap nightly report, ban and VIP lists matched to the person, wristband colors by age and iPad door mode.
 - Reads driver's licenses and ID cards from every US state, DC, the US territories and Canada's provinces (the AAMVA PDF417 barcode), passports and passport-style ID cards (the ICAO Doc 9303 machine-readable zone, check digits verified), and Apple Wallet IDs through Apple's ID Verifier.
-- Checks: age and expiry in the venue's time zone; barcodes that disagree with themselves, such as an under-21 date that doesn't follow from the birth date; the same card scanned twice in one night (pass-back); cards made like fakes other venues confirmed (Fake Watch); a question only the real holder would know.
+- Checks: age and expiry in the venue's time zone; barcodes that disagree with themselves, such as an under-21 date that doesn't follow from the birth date; the same card scanned twice in one night (pass-back, with Pro); cards made like fakes other venues confirmed (Fake Watch); a question only the real holder would know.
 - Limits: a phone can't check holograms, ultraviolet ink or card thickness, and a well-made fake carries a working barcode. Doorproof never calls a card genuine on its barcode alone. An unreadable barcode means check by hand, not fake.
 - Privacy: IDs are read on the device and no image is saved. Records are off by default and stay on the device. Fake Watch shares only what staff mark as fake or real: how that card's barcode was made, the issuing state, the venue's city, an anonymous venue code and the time, never a name, ID number, birth date, address or photo. It can be turned off.
 - Runs on iPhone and iPad with iOS 17 or later. On the App Store in the United States and Canada, in English and Spanish (Mexico).
@@ -18,7 +18,7 @@ Doorproof helps staff check IDs. It isn't legal advice or a guarantee, and rules
 
 ### Is Doorproof free?
 
-Yes. Scanning is free and unlimited, with pass-back alerts and Fake Watch included, and no account. Doorproof Pro adds scan records, ban and VIP lists, wristbands and iPad door mode for $9.99 a month or $49.99 a year in the US, each with a free week.
+Yes. Scanning is free and unlimited, with Fake Watch included and no account. Doorproof Pro adds pass-back alerts, scan records with a nightly report, ban and VIP lists, wristbands and iPad door mode for $9.99 a month or $49.99 a year in the US, each with a free week.
 
 ### Which IDs does it read?
 
@@ -319,7 +319,7 @@ California and Virginia both teach asking those questions when something seems o
 
 ## How Doorproof does it
 
-Doorproof warns when the same ID is scanned twice in one night, with the time and door of the first scan. It does this without keeping names. Each card is stored as a keyed code that can't be turned back into a card or a person. The key is made each night and deleted at the venue's closing time. Pass-back alerts are free.
+Doorproof warns when the same ID is scanned twice in one night, with the time and door of the first scan. It does this without keeping names. Each card is stored as a keyed code that can't be turned back into a card or a person. The key is made each night and deleted at the venue's closing time. Pass-back alerts are part of Doorproof Pro, with a free week to try them.
 
 ## Frequently asked questions
 

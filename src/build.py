@@ -30,17 +30,17 @@ UPDATED_LONG = date.fromisoformat(UPDATED).strftime("%B %-d, %Y")
 DISCLAIMER = "Doorproof helps staff check IDs. It isn't legal advice or a guarantee, and rules on checking and scanning IDs differ by state."
 PUBLISHER = {"@type": "Organization", "name": NAME, "url": BASE, "logo": BASE + "img/icon-512.png"}
 HOME_TITLE = "Doorproof: ID Scanner & Age Verification App for Bars, Clubs and Stores"
-HOME_DESCRIPTION = ("Free, unlimited ID scanning on iPhone and iPad for bars, clubs, liquor stores and events. Age and expiry "
-                    "in a second, altered-ID checks, pass-back alerts and Fake Watch.")
+HOME_DESCRIPTION = ("Free, unlimited ID scanning on iPhone and iPad for bars, clubs and stores: age and expiry in a second, "
+                    "altered-ID checks and Fake Watch. Pro adds pass-back alerts.")
 SUMMARY = ("Doorproof is an ID scanner and age verification app for iPhone and iPad. Door staff at bars, clubs, liquor "
            "stores and events point the camera at the barcode on the back of a US or Canadian driver's license or ID "
            "card, a passport's machine-readable lines, or an Apple Wallet ID, and get the age, the expiry and any sign "
            "the card was altered, in a second.")
 FACTS = [
-    "Scanning is free and unlimited, with no account. Pass-back alerts and Fake Watch are free.",
-    "Doorproof Pro costs $9.99 a month or $49.99 a year in the US, each with a one-week free trial. It adds scan records, ban and VIP lists matched to the person, wristband colors by age and iPad door mode.",
+    "Scanning is free and unlimited, with no account. Fake Watch is free.",
+    "Doorproof Pro costs $9.99 a month or $49.99 a year in the US, each with a one-week free trial. It adds pass-back alerts (the same card twice in one night), scan records with a one-tap nightly report, ban and VIP lists matched to the person, wristband colors by age and iPad door mode.",
     "Reads driver's licenses and ID cards from every US state, DC, the US territories and Canada's provinces (the AAMVA PDF417 barcode), passports and passport-style ID cards (the ICAO Doc 9303 machine-readable zone, check digits verified), and Apple Wallet IDs through Apple's ID Verifier.",
-    "Checks: age and expiry in the venue's time zone; barcodes that disagree with themselves, such as an under-21 date that doesn't follow from the birth date; the same card scanned twice in one night (pass-back); cards made like fakes other venues confirmed (Fake Watch); a question only the real holder would know.",
+    "Checks: age and expiry in the venue's time zone; barcodes that disagree with themselves, such as an under-21 date that doesn't follow from the birth date; the same card scanned twice in one night (pass-back, with Pro); cards made like fakes other venues confirmed (Fake Watch); a question only the real holder would know.",
     "Limits: a phone can't check holograms, ultraviolet ink or card thickness, and a well-made fake carries a working barcode. Doorproof never calls a card genuine on its barcode alone. An unreadable barcode means check by hand, not fake.",
     "Privacy: IDs are read on the device and no image is saved. Records are off by default and stay on the device. Fake Watch shares only what staff mark as fake or real: how that card's barcode was made, the issuing state, the venue's city, an anonymous venue code and the time, never a name, ID number, birth date, address or photo. It can be turned off.",
     "Runs on iPhone and iPad with iOS 17 or later. On the App Store in the United States and Canada, in English and Spanish (Mexico).",
@@ -250,7 +250,7 @@ home_schema = [
     {"@context": "https://schema.org", "@type": "MobileApplication", "name": APP_NAME, "alternateName": NAME, "url": BASE,
      "installUrl": APP, "downloadUrl": APP, "operatingSystem": "iOS 17.0 or later", "applicationCategory": "BusinessApplication",
      "description": SUMMARY, "image": BASE + "img/icon-512.png", "screenshot": [BASE + f"img/{n}.jpg" for n in ("1-demo", "2-mismatch", "3-fakewatch", "4-passback")],
-     "featureList": ["Age and expiry check", "Altered ID check", "Pass-back alerts", "Fake Watch", "Passport MRZ reading", "Apple Wallet ID verification", "Scan records (Pro)", "Ban and VIP lists (Pro)", "Wristbands by age (Pro)", "iPad door mode (Pro)"],
+     "featureList": ["Age and expiry check", "Altered ID check", "Pass-back alerts (Pro)", "Fake Watch", "Passport MRZ reading", "Apple Wallet ID verification", "Scan records (Pro)", "Ban and VIP lists (Pro)", "Wristbands by age (Pro)", "iPad door mode (Pro)"],
      "inLanguage": ["en", "es-MX"], "publisher": PUBLISHER,
      "offers": [{"@type": "Offer", "name": "Doorproof", "price": "0", "priceCurrency": "USD"},
                 {"@type": "Offer", "name": "Doorproof Pro, monthly", "price": "9.99", "priceCurrency": "USD"},

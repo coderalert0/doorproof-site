@@ -28,7 +28,7 @@ California and Virginia both teach asking those questions when something seems o
 
 ## How Doorproof does it
 
-Doorproof warns when the same ID is scanned twice in one night, with the time and door of the first scan. It does this without keeping names. Each card is stored as a keyed code that can't be turned back into a card or a person. The key is made each night and deleted at the venue's closing time. Pass-back alerts are free.
+Doorproof warns when the same ID is scanned twice in one night, with the time and door of the first scan. It does this without keeping names. Each card is stored as a keyed code that can't be turned back into a card or a person. The key is made each night and deleted at the venue's closing time. Pass-back alerts are part of Doorproof Pro, with a free week to try them.
 
 ## Frequently asked questions
 
