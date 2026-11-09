@@ -25,7 +25,7 @@ Doorproof helps staff check IDs. It isn't legal advice or a guarantee, and rules
 
 ## App
 
-- [App Store listing](https://apps.apple.com/us/app/id6832112189): Doorproof: ID Scanner & Age, for iPhone and iPad, iOS 17 or later
+- [App Store listing](https://apps.apple.com/us/app/id6832112189): ID Scanner & Age: Doorproof, for iPhone and iPad, iOS 17 or later
 - [Home page](https://coderalert0.github.io/doorproof-site/): What Doorproof checks, Doorproof Pro, questions and support
 - [Privacy Policy](https://coderalert0.github.io/doorproof-site/privacy.html): What the app reads, keeps and shares
 - [Terms of Use](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/): Apple's standard license agreement

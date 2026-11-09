@@ -24,7 +24,7 @@ APP_ID = "6832112189"
 APP = f"https://apps.apple.com/us/app/id{APP_ID}"
 APP_FR = f"https://apps.apple.com/ca/app/id{APP_ID}?l=fr-CA"   # the Canadian store, in French
 NAME = "Doorproof"
-APP_NAME = "Doorproof: ID Scanner & Age"
+APP_NAME = "ID Scanner & Age: Doorproof"
 TERMS = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
 UPDATED = "2026-11-07"
 UPDATED_LONG = date.fromisoformat(UPDATED).strftime("%B %-d, %Y")
